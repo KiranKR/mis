@@ -1,0 +1,194 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/pages/BMAZBaseTemplate.xhtml">
+
+	<ui:define name="body">
+		<h:form id="form">
+			<div id="product_list">
+				<!--[if !IE]>start table_wrapper<![endif]-->
+				<div class="table_wrapper">
+					<div class="table_wrapper_inner">
+						<div class="title_wrapper">
+							<h2>Installation</h2>
+							<span class="title_wrapper_left"></span> <span
+								class="title_wrapper_right"></span>
+						</div>
+
+						<table width="100%">
+						 <tr><p:messages id="erMsg"/> </tr>
+							<tr>
+								<td class="box text">Section</td>
+								<td><p:selectOneMenu value="#{pc_instalation.bean.secId}" tabindex="1">
+										<f:selectItems value="#{pc_instalation.secList}" />
+										<p:ajax update="obp,obi,obt,cbp,cbi,cbt,dp,di,dt,cp,ci,ct,mws,umws,t,sbtn,erMsg" listener="#{pc_instalation.getInstalationOB}" />  
+									</p:selectOneMenu>
+								</td>
+								<td class="box text">Month</td>
+								<td><p:selectOneMenu value="#{pc_instalation.bean.mnthId}" tabindex="2">
+								<f:selectItem itemLabel="Select" itemValue="0"/>
+										<f:selectItems value="#{pc_instalation.enumMonths}" />
+										<p:ajax update="obp,obi,obt,cbp,cbi,cbt,dp,di,dt,cp,ci,ct,mws,umws,t,sbtn,erMsg" listener="#{pc_instalation.getInstalationOB}" />
+									</p:selectOneMenu></td>
+								<td class="box text">Year</td>
+								<td><p:selectOneMenu value="#{pc_instalation.bean.yearId}" tabindex="3">
+								  <f:selectItem itemLabel="Select" itemValue="0"/>
+								  <f:selectItem itemLabel="2012" itemValue="2012"/>
+								  <f:selectItem itemLabel="2013" itemValue="2013"/>
+								  <p:ajax update="obp,obi,obt,cbp,cbi,cbt,dp,di,dt,cp,ci,ct,mws,umws,t,sbtn,erMsg" listener="#{pc_instalation.getInstalationOB}" />
+								</p:selectOneMenu></td>
+							</tr>
+							
+						</table>
+
+
+                        <table width="100%">
+                        <tr style="height: 20px">
+                            <td class="box text" colspan="6"></td>
+                          </tr>
+                          <tr>
+                            <td class="box text">Metered Water Supply</td>
+                            <td>
+	                            <h:inputText id="mws" class="right_input" value="#{pc_instalation.bean.mtrWtrSply}" tabindex="4">
+	                            	<p:ajax event="blur" update="t" listener="#{pc_instalation.getTotal}" />
+	                            </h:inputText> 
+	                        </td>
+                            <td class="box text">Unmeterd Water Supply</td>
+                            <td><h:inputText id="umws" class="right_input" value="#{pc_instalation.bean.unMtrWtrSply}" tabindex="5">
+                            	<p:ajax event="blur" update="t" listener="#{pc_instalation.getTotal}" />
+                            	</h:inputText></td>
+                            <td class="box text">Total</td>
+                            <td><h:inputText id="t" class="right_input" value="#{pc_instalation.bean.total}" disabled="true" tabindex="6">
+                            	</h:inputText>
+                            </td>
+                          </tr>
+                          
+                          <tr style="height: 20px">
+                            <td class="box text" colspan="6"></td>
+                          </tr>
+                          <tr>
+                            <td class="box text"></td>
+                            <td class="box text"><strong>Principal</strong></td>
+                            <td class="box text"><strong>Interest</strong></td>
+                            <td class="box text"><strong>Total</strong></td>
+                            <td colspan="2"></td>
+                            
+                          </tr>
+                        
+                         <tr>
+                            <td class="box text"><strong>Opening Balance</strong></td>
+                             <td>
+	                            <h:inputText id="obp" class="right_input" value="#{pc_instalation.bean.openBalPrinAmt}" disabled="#{pc_instalation.bean.viewOlyOB}" tabindex="7">
+	                            	<p:ajax event="blur" update="obt,cbt,cbp,obp,dt,cp,ci,ct" listener="#{pc_instalation.getOPT}" />
+	                            	<f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                            <td>
+	                            <h:inputText id="obi" class="right_input" value="#{pc_instalation.bean.openBalIntAmt}" disabled="#{pc_instalation.bean.viewOlyOB}" tabindex="8">
+	                            <p:ajax event="blur" update="obt,cbi,cbt,obi,dt,cp,ci,ct" listener="#{pc_instalation.getOPT}" />
+	                            <f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                             <td>
+	                            <h:inputText id="obt" class="right_input" value="#{pc_instalation.bean.openBalTtlAmt}" disabled="true" >
+	                            <f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                            <td colspan="2"></td>
+                          </tr>
+                          
+                          
+                          <tr>
+                            <td class="box text"><strong>Demand</strong></td>
+                            <td>
+                            <h:inputText id="dp" class="right_input" value="#{pc_instalation.bean.demdBalPrinAmt}" tabindex="9">
+	                            	<p:ajax event="blur" update="dt,cbt,cbp,dp" listener="#{pc_instalation.getDT}" />
+	                            	<f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+	                            </td>
+                            <td>
+	                            <h:inputText id="di" class="right_input" value="#{pc_instalation.bean.demdBalIntAmt}" tabindex="10">
+	                            <p:ajax event="blur" update="dt,cbi,cbt,di" listener="#{pc_instalation.getDT}" />
+	                            <f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                            <td>
+                            <h:inputText id="dt" class="right_input" value="#{pc_instalation.bean.demdBalTtlAmt}" disabled="true" >
+                            <f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+	                            </td>
+                            <td colspan="2"></td>
+                          </tr>
+                          
+                          <tr>
+                            <td class="box text"><strong>Collection</strong></td>
+                             <td>
+	                            <h:inputText id="cp" class="right_input" value="#{pc_instalation.bean.clctnBalPrinAmt}" tabindex="11">
+	                            	<p:ajax event="blur" update="ct,cbt,cbp,cp" listener="#{pc_instalation.getCT}" />
+	                            	<f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                            <td>
+	                            <h:inputText id="ci" class="right_input" value="#{pc_instalation.bean.clctnBalIntAmt}" tabindex="12">
+	                            <p:ajax event="blur" update="ct,cbi,cbt,ci" listener="#{pc_instalation.getCT}" />
+	                            <f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                             <td>
+	                            <h:inputText id="ct" class="right_input" value="#{pc_instalation.bean.clctnBalTtlAmt}" disabled="true" >
+	                            <f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                            <td colspan="2"></td>
+                          </tr>
+                          
+                          
+                          <tr>
+                            <td class="box text"><strong>CB Balance</strong></td>
+                             <td>
+	                            <h:inputText id="cbp" class="right_input" value="#{pc_instalation.bean.closBalPrinAmt}" disabled="true" tabindex="13">
+	                            	<p:ajax event="blur" update="cbt" listener="#{pc_instalation.getCBT}" />
+	                            	<f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                            <td>
+	                            <h:inputText id="cbi" class="right_input" value="#{pc_instalation.bean.closBalIntAmt}" disabled="true" tabindex="14">
+	                            <p:ajax event="blur" update="cbt" listener="#{pc_instalation.getCBT}" />
+	                            <f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                             <td>
+	                            <h:inputText id="cbt" class="right_input" value="#{pc_instalation.bean.closBalTtlAmt}" disabled="true" >
+	                            <f:convertNumber pattern="#,###,##0.00"/>
+	                            </h:inputText>
+                            </td>
+                            <td colspan="2"></td>
+                          </tr>
+                          <tr style="height: 10px">
+                            <td class="box text" colspan="6"></td>
+                          </tr>
+                          
+                          
+						   <tr>
+							   <td colspan="3"></td>
+							   <td align="left">
+								   <strong>
+								   		<h:commandButton id="sbtn" value="Save" action="#{pc_instalation.saveData}" tabindex="15" styleClass="#{pc_instalation.btnCss}" disabled="#{pc_instalation.btnDisable}"  />
+								   </strong>
+							   </td>
+								<td colspan="2">
+									<h:commandButton value="cancel" tabindex="16" action="#{pc_instalation.cancelHome}" styleClass="greenBtn" />
+								</td>
+						   </tr>
+						 </table>
+					</div>
+				</div>
+			</div>
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>

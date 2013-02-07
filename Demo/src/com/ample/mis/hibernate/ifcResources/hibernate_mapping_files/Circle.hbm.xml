@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="CircleBO" table="circle" catalog="mis">
+        <id name="crclId" type="java.lang.Integer">
+            <column name="CRCL_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="zone" class="ZoneBO" fetch="select">
+            <column name="CRCL_ZONE_ID" not-null="true" />
+        </many-to-one>
+        <property name="crclShortCode" type="string">
+            <column name="CRCL_SHORT_CODE" length="10" not-null="true" />
+        </property>
+        <property name="crclName" type="string">
+            <column name="CRCL_NAME" length="50" not-null="true" />
+        </property>
+        <property name="crclFromDate" type="timestamp">
+            <column name="CRCL_FROM_DATE" length="19" not-null="true" />
+        </property>
+        <property name="crclToDate" type="timestamp">
+            <column name="CRCL_TO_DATE" length="19" />
+        </property>
+        <property name="crclRowStatus" type="boolean">
+            <column name="CRCL_ROW_STATUS" not-null="true" />
+        </property>
+        <property name="crclCreatedBy" type="java.lang.Long">
+            <column name="CRCL_CREATED_BY" />
+        </property>
+        <property name="crclCreatedDate" type="timestamp">
+            <column name="CRCL_CREATED_DATE" length="19" />
+        </property>
+        <property name="crclLastUpdatedBy" type="java.lang.Long">
+            <column name="CRCL_LAST_UPDATED_BY" />
+        </property>
+        <property name="crclLastUpdatedDate" type="timestamp">
+            <column name="CRCL_LAST_UPDATED_DATE" length="19" />
+        </property>
+        <set name="divisions" table="division" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DIV_CIRCLE_ID" not-null="true" />
+            </key>
+            <one-to-many class="DivisionBO" />
+        </set>
+    </class>
+</hibernate-mapping>

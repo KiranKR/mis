@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0;padding:0;font-family:Verdana, Geneva, sans-serif;}
+.box{padding:4px;}
+h1{font-size:16px;}
+h3, span, .text, .text a{font-size:12px;text-decoration:none;color:#000000}
+.text a:hover{font-size:12px;font-weight:bold;text-decoration:none;color:#000000}
+#trHeader{background-image:url(../images/header_bg.jpg); background-repeat:repeat-x;}
+#trBreadCrump, #trFooter{background-color:#e2e2e2;}
+.table_form{border-collapse:collapse;}
+input, select, textarea{border: 1px solid #BBBBBB;border-radius:3px 3px 3px 3px;color:#333333;font-family:Arial,Helvetica,sans-serif;font-size:12px;outline:medium none;padding:4px; vertical-align:middle;}
+
+.tabColor {background-image:url("../images/header_bg.jpg");}
+
+*{
+font-size:10px;
+}
+.title strong{
+font-size:1px !important;
+}
+.field span{text-decoration:underline}
+.right_input{text-align:right;}
+.ui-datatable-odd {
+    background: none repeat scroll 0 0 #E8E8E8 ;
+}
+.vertAlign {
+vertical-align: top
+}
+.star	{
+	color:red;
+}
+.xx td {
+    clear: left;
+    float: left;
+    padding-bottom: 12px;
+}
+.green {
+    margin: 2px;
+    padding: 0;
+    border: 0;
+    background-image:url('../images/pBtnBg.jpg') !important;
+    width: 100px;
+    height: 25px;
+    border-radius: 6px 6px 6px 6px !important;
+    overflow: visible;
+}

@@ -1,0 +1,223 @@
+<html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/pages/BMAZBaseTemplate.xhtml">
+
+
+
+	<ui:define name="body">
+		<h:form id="form">
+			<div id="product_list">
+				<!--[if !IE]>start table_wrapper<![endif]-->
+				<div class="table_wrapper">
+					<div class="table_wrapper_inner">
+						<div class="title_wrapper">
+							<h2>Disconnection Summary Report</h2>
+							<span class="title_wrapper_left"></span> <span
+								class="title_wrapper_right"></span>
+						</div>
+						<table width="100%" border="1" bgcolor="#CCCCCC"
+							cellpadding="0" cellspacing="0" class="table_form">
+							<tr>
+								<p:messages/>
+							</tr>
+							<tr>
+								<td class="box text">From</td>
+								<td class="box text">Month</td>
+
+								<td><p:selectOneMenu
+										value="#{pc_DisconnectionSummary.fromMonthID}" tabindex="2">
+										<f:selectItem itemLabel="Select" itemValue="0" />
+										<f:selectItems value="#{pc_DisconnectionSummary.enumMonths}" />
+									</p:selectOneMenu>
+								</td>
+								<td class="box text">Year</td>
+								<td><p:selectOneMenu id="fromYearId"
+										value="#{pc_DisconnectionSummary.fromYearID}" tabindex="3">
+										<f:selectItem itemLabel="select" itemValue="0" />
+										<f:selectItem itemLabel="2012" itemValue="2012" />
+										<f:selectItem itemLabel="2013" itemValue="2013" />
+									</p:selectOneMenu></td>
+								<td class="box text"></td>
+							</tr>
+							<tr>
+								<td class="box text">To</td>
+								<td class="box text">Month</td>
+								<td><p:selectOneMenu
+										value="#{pc_DisconnectionSummary.toMonthID}" tabindex="4">
+										<f:selectItem itemLabel="Select" itemValue="0" />
+										<f:selectItems value="#{pc_DisconnectionSummary.enumMonths}" />
+									</p:selectOneMenu>
+								</td>
+								<td class="box text">Year</td>
+								<td><p:selectOneMenu id="toYearId"
+										value="#{pc_DisconnectionSummary.toYearId}" tabindex="5">
+										<f:selectItem itemLabel="select" itemValue="0" />
+										<f:selectItem itemLabel="2012" itemValue="2012" />
+										<f:selectItem itemLabel="2013" itemValue="2013" />
+									</p:selectOneMenu></td>
+
+								<td align="right" colspan="2"><strong><h:commandButton
+											value="Ok"
+											action="#{pc_DisconnectionSummary.getDisconnectionSummaryList}"
+											tabindex="6" styleClass="greenBtn" /> </strong>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="5"></td>
+							</tr>
+							<tr>
+								<c:if test="#{pc_DisconnectionSummary.backbtn}">
+
+									<tr>
+										<td colspan="7"><p:breadCrumb>
+												<p:menuitem url="./home.jsf"></p:menuitem>
+												<c:forEach items="#{pc_DisconnectionSummary.stackBeans}"
+													var="path">
+													<p:menuitem value="#{path.name}"
+														action="#{pc_DisconnectionSummary.back(path.id,path.lvl,path.name,path.slno)}"
+														update="form" />
+												</c:forEach>
+											</p:breadCrumb></td>
+									</tr>
+								</c:if>
+							</tr>
+
+							<tr>
+								<td colspan="5">
+
+									<table>
+										<thead>
+											<tr>
+												<th class="ui-state-default"><h:outputText
+														value="&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;#{pc_DisconnectionSummary.header}&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;" />
+												</th>
+
+												<th class="ui-state-default">Visited during month</th>
+												<th class="ui-state-default">Disconnected during month</th>
+												<th class="ui-state-default">Opening Balance</th>
+												<th class="ui-state-default">Total Amount Involved</th>
+												<th class="ui-state-default">Total Amount Released</th>
+												<th class="ui-state-default">Balance</th>
+											</tr>
+
+
+
+										</thead>
+										<tbody>
+											<c:forEach items="#{pc_DisconnectionSummary.dispDiscSumList}"
+												var="bean">
+												<tr>
+													<td><h:commandLink value="#{bean.lable}"
+															action="#{pc_DisconnectionSummary.getSchemeWiseRep(bean.id,bean.level,bean.lable)}" />
+													</td>
+
+													<td><h:outputText value="#{bean.visitDurMnth}"
+															style="float: right;">></h:outputText>
+													</td>
+													<td><h:outputText value="#{bean.disconctDurMnth}"
+															style="float: right;">></h:outputText>
+													</td>
+
+													<td><h:outputText value="#{bean.ttlOB}"
+															style="float: right;">>
+													<f:convertNumber pattern="#,###,##0.00" />
+														</h:outputText>
+													</td>
+
+													<td><h:outputText value="#{bean.ttlAmtInv}"
+															style="float: right;">>
+													<f:convertNumber pattern="#,###,##0.00" />
+														</h:outputText>
+													</td>
+													<td><h:outputText value="#{bean.ttlAmtRel}"
+															style="float: right;">>
+													<f:convertNumber pattern="#,###,##0.00" />
+														</h:outputText>
+													</td>
+													<td><h:outputText value="#{bean.ttlCB}"
+															style="float: right;">>
+													<f:convertNumber pattern="#,###,##0.00" />
+														</h:outputText>
+													</td>
+
+
+
+												</tr>
+												<tr>
+
+
+												</tr>
+
+											</c:forEach>
+										</tbody>
+										<tfoot>
+											<tr>
+												<td><strong><h:outputText value="Total" />
+												</strong>
+												</td>
+												<td><strong><h:outputText
+															value="#{pc_DisconnectionSummary.grandVisiDuringMonth}"
+															style="float:right;" />
+												</strong>
+												</td>
+												<td><strong><h:outputText
+															value="#{pc_DisconnectionSummary.grandDiscDuringMonth}"
+															style="float:right;" />
+												</strong>
+												</td>
+
+												<td><strong><h:outputText
+															value="#{pc_DisconnectionSummary.grandTtlOB}"
+															style="float:right;">
+															<f:convertNumber pattern="#,###,##0.00" />
+														</h:outputText>
+												</strong></td>
+												<td><strong><h:outputText
+															value="#{pc_DisconnectionSummary.grandTtlAmtInv}"
+															style="float:right;">
+															<f:convertNumber pattern="#,###,##0.00" />
+														</h:outputText>
+												</strong>
+												</td>
+												<td><strong><h:outputText
+															value="#{pc_DisconnectionSummary.grandTtlAmtRel}"
+															style="float:right;">
+															<f:convertNumber pattern="#,###,##0.00" />
+														</h:outputText>
+												</strong>
+												</td>
+												<td><strong><h:outputText
+															value="#{pc_DisconnectionSummary.grandTtlCB}"
+															style="float:right;">
+															<f:convertNumber pattern="#,###,##0.00" />
+														</h:outputText>
+												</strong>
+												</td>
+
+
+											</tr>
+										</tfoot>
+									</table>
+								</td>
+							</tr>
+
+
+						</table>
+					</div>
+				</div>
+			</div>
+			<span class="scb"><span class="scb_left"></span><span
+				class="scb_right"></span> </span>
+		</h:form>
+		<script type="text/javascript">
+window.history.forward();
+function noBack() { window.history.forward();}
+</script>
+	</ui:define>
+</ui:composition>
+</html>

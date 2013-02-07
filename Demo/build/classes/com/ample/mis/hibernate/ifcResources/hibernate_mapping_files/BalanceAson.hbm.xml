@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="BalanceAsonBO" table="balance_ason" catalog="mis">
+        <id name="blasonId" type="java.lang.Integer">
+            <column name="BLASON_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="blasonLevelIden" type="int">
+            <column name="BLASON_LEVEL_IDEN" not-null="true" />
+        </property>
+        <property name="blasonLevelFkId" type="int">
+            <column name="BLASON_LEVEL_FK_ID" not-null="true" />
+        </property>
+        <property name="blasonIdenFlag" type="int">
+            <column name="BLASON_IDEN_FLAG" not-null="true" />
+        </property>
+        <property name="blasonObCount" type="java.lang.Integer">
+            <column name="BLASON_OB_COUNT" />
+        </property>
+        <property name="blasonObAmount" type="java.lang.Double">
+            <column name="BLASON_OB_AMOUNT" precision="15" />
+        </property>
+        <property name="blasonLastupdated" type="timestamp">
+            <column name="BLASON_LASTUPDATED" length="19" />
+        </property>
+        <property name="blasonObInterest" type="java.lang.Double">
+            <column name="BLASON_OB_INTEREST" precision="15" />
+        </property>
+        <property name="blasonOb1to3" type="java.lang.Integer">
+            <column name="BLASON_OB_1TO3" />
+        </property>
+        <property name="blasonOb3to6" type="java.lang.Integer">
+            <column name="BLASON_OB_3TO6" />
+        </property>
+        <property name="blasonObGrt6" type="java.lang.Integer">
+            <column name="BLASON_OB_GRT6" />
+        </property>
+    </class>
+</hibernate-mapping>

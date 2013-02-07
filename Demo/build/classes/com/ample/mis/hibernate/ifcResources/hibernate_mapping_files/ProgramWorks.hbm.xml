@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="ProgramWorksBO" table="program_works" catalog="mis">
+        <id name="pwrkId" type="java.lang.Long">
+            <column name="PWRK_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="program" class="ProgramBO" fetch="select">
+            <column name="PWRK_PROGRM_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="taluk" class="TalukBO" fetch="select">
+            <column name="PWRK_TALUK_ID" />
+        </many-to-one>
+        <many-to-one name="section" class="SectionBO" fetch="select">
+            <column name="PWRK_SECTN_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="casteCategory" class="CasteCategoryBO" fetch="select">
+            <column name="PWRK_CSTCTG_ID" />
+        </many-to-one>
+        <property name="pwrkDate" type="timestamp">
+            <column name="PWRK_DATE" length="19" not-null="true" />
+        </property>
+        <property name="pwrkUid" type="string">
+            <column name="PWRK_UID" length="50" not-null="true" />
+        </property>
+        <property name="pwrkCstctgIdenFlag" type="java.lang.Integer">
+            <column name="PWRK_CSTCTG_IDEN_FLAG" />
+        </property>
+        <property name="pwrkBeneficiary" type="string">
+            <column name="PWRK_BENEFICIARY" length="100" />
+        </property>
+        <property name="pwrkRegDate" type="timestamp">
+            <column name="PWRK_REG_DATE" length="19" />
+        </property>
+        <property name="pwrkVillage" type="string">
+            <column name="PWRK_VILLAGE" length="100" />
+        </property>
+        <property name="pwrkStageIden" type="int">
+            <column name="PWRK_STAGE_IDEN" not-null="true" />
+        </property>
+        <property name="pwrkEstimateNo" type="string">
+            <column name="PWRK_ESTIMATE_NO" length="25" />
+        </property>
+        <property name="pwrkEstimateDate" type="timestamp">
+            <column name="PWRK_ESTIMATE_DATE" length="19" />
+        </property>
+        <property name="pwrkEstimateCost" type="java.lang.Double">
+            <column name="PWRK_ESTIMATE_COST" precision="15" />
+        </property>
+        <property name="pwrkIntimateDate" type="timestamp">
+            <column name="PWRK_INTIMATE_DATE" length="19" />
+        </property>
+        <property name="pwrkWoNo" type="string">
+            <column name="PWRK_WO_NO" length="25" />
+        </property>
+        <property name="pwrkWoIssueDate" type="timestamp">
+            <column name="PWRK_WO_ISSUE_DATE" length="19" />
+        </property>
+        <property name="pwrkRrNo" type="string">
+            <column name="PWRK_RR_NO" length="25" />
+        </property>
+        <property name="pwrkDateOfService" type="timestamp">
+            <column name="PWRK_DATE_OF_SERVICE" length="19" />
+        </property>
+        <property name="pwrkRowStatus" type="boolean">
+            <column name="PWRK_ROW_STATUS" not-null="true" />
+        </property>
+        <property name="pwrkSourceIden" type="java.lang.Integer">
+            <column name="PWRK_SOURCE_IDEN" />
+        </property>
+        <property name="pwrkRegFee" type="java.lang.Double">
+            <column name="PWRK_REG_FEE" precision="15" />
+        </property>
+        <property name="pwrkRtno" type="string">
+            <column name="PWRK_RTNO" length="20" />
+        </property>
+        <property name="pwrkWorkAwardDate" type="timestamp">
+            <column name="PWRK_WORK_AWARD_DATE" length="19" />
+        </property>
+        <property name="pwrkHtLine" type="string">
+            <column name="PWRK_HT_LINE" length="10" />
+        </property>
+        <property name="pwrkLtLine" type="string">
+            <column name="PWRK_LT_LINE" length="10" />
+        </property>
+        <property name="pwrkTfCapacity" type="string">
+            <column name="PWRK_TF_CAPACITY" length="10" />
+        </property>
+        <property name="pwrkTfLoad" type="string">
+            <column name="PWRK_TF_LOAD" length="10" />
+        </property>
+        <property name="pwrkIdenFlag" type="java.lang.Integer">
+            <column name="PWRK_IDEN_FLAG" />
+        </property>
+        <set name="programStatuses" table="program_status" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PSTS_PWRK_ID" not-null="true" />
+            </key>
+            <one-to-many class="ProgramStatusBO" />
+        </set>
+        <set name="programDeposits" table="program_deposit" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PDPST_PWRK_ID" not-null="true" />
+            </key>
+            <one-to-many class="ProgramDepositBO" />
+        </set>
+    </class>
+</hibernate-mapping>

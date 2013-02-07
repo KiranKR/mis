@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="SectionBO" table="section" catalog="mis">
+        <id name="sectnId" type="java.lang.Integer">
+            <column name="SECTN_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="subDivision" class="SubDivisionBO" fetch="select">
+            <column name="SECTN_SUBDIV_ID" not-null="true" />
+        </many-to-one>
+        <property name="sectnShortCode" type="string">
+            <column name="SECTN_SHORT_CODE" length="10" not-null="true" />
+        </property>
+        <property name="sectnName" type="string">
+            <column name="SECTN_NAME" length="50" not-null="true" />
+        </property>
+        <property name="sectnFromDate" type="timestamp">
+            <column name="SECTN_FROM_DATE" length="19" not-null="true" />
+        </property>
+        <property name="sectnToDate" type="timestamp">
+            <column name="SECTN_TO_DATE" length="19" />
+        </property>
+        <property name="sectnRowStatus" type="boolean">
+            <column name="SECTN_ROW_STATUS" not-null="true" />
+        </property>
+        <property name="sectnCreatedBy" type="java.lang.Long">
+            <column name="SECTN_CREATED_BY" />
+        </property>
+        <property name="sectnCreatedDate" type="timestamp">
+            <column name="SECTN_CREATED_DATE" length="19" />
+        </property>
+        <property name="sectnLastUpdatedBy" type="java.lang.Long">
+            <column name="SECTN_LAST_UPDATED_BY" />
+        </property>
+        <property name="sectnLastUpdatedDate" type="timestamp">
+            <column name="SECTN_LAST_UPDATED_DATE" length="19" />
+        </property>
+        <set name="constituencies" table="constituency" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="CONSTY_SECTN_ID" not-null="true" />
+            </key>
+            <one-to-many class="ConstituencyBO" />
+        </set>
+        <set name="programWorkses" table="program_works" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="PWRK_SECTN_ID" not-null="true" />
+            </key>
+            <one-to-many class="ProgramWorksBO" />
+        </set>
+        <set name="tranHeads" table="tran_head" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TH_SECTN_ID" not-null="true" />
+            </key>
+            <one-to-many class="TranHeadBO" />
+        </set>
+    </class>
+</hibernate-mapping>

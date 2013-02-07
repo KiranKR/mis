@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="RoleBO" table="role" catalog="mis">
+        <id name="roleId" type="java.lang.Integer">
+            <column name="ROLE_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="roleName" type="string">
+            <column name="ROLE_NAME" length="50" not-null="true" />
+        </property>
+        <property name="roleRowStatus" type="boolean">
+            <column name="ROLE_ROW_STATUS" not-null="true" />
+        </property>
+        <property name="roleLn" type="string">
+            <column name="ROLE_LN" length="2" not-null="true" />
+        </property>
+        <set name="rolModActions" table="rol_mod_action" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="RLMAP_ROLE_ID" not-null="true" />
+            </key>
+            <one-to-many class="RolModActionBO" />
+        </set>
+        <set name="userRoleses" table="user_roles" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USROL_ROLE_ID" not-null="true" />
+            </key>
+            <one-to-many class="UserRolesBO" />
+        </set>
+    </class>
+</hibernate-mapping>

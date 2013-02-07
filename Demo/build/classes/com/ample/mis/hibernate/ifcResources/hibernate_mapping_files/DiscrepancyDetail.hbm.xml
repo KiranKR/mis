@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="DiscrepancyDetailBO" table="discrepancy_detail" catalog="mis">
+        <id name="crpdetId" type="java.lang.Long">
+            <column name="CRPDET_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="discrepancy" class="DiscrepancyBO" fetch="select">
+            <column name="CRPDET_DCREP_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="tranHead" class="TranHeadBO" fetch="select">
+            <column name="CRPDET_TH_ID" not-null="true" />
+        </many-to-one>
+        <property name="crpdetNoofConsmpn" type="java.lang.Integer">
+            <column name="CRPDET_NOOF_CONSMPN" />
+        </property>
+        <property name="crpdetDmndRaised" type="java.lang.Double">
+            <column name="CRPDET_DMND_RAISED" precision="15" />
+        </property>
+        <property name="crpdetRowStatus" type="java.lang.Boolean">
+            <column name="CRPDET_ROW_STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

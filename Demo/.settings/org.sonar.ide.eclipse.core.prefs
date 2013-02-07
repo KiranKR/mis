@@ -1,0 +1,8 @@
+#Fri Dec 14 10:17:35 GMT+05:30 2012
+analyseLocally=false
+eclipse.preferences.version=1
+projectArtifactId=sonar-ldap-plugin
+projectBranch=
+projectGroupId=org.codehaus.sonar-plugins
+serverUrl=http\://nemo.sonarsource.org
+version=1

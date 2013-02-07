@@ -1,0 +1,1149 @@
+<?xml version="1.0"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee        
+ http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+	<!-- Empty for now. Your entries will go here. But even if you have no entries 
+		in faces-config.xml, you are required to have a valid faces-config.xml file 
+		with legal start and end tags. From JSF 2.0 tutorial at http://www.coreservlets.com/JSF-Tutorial/jsf2/ -->
+	<application>
+		<view-handler>com.Util.CustomViewHandler</view-handler>
+		<message-bundle>com.Util.messages_en</message-bundle>
+	</application>
+	 <application>
+    	<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+  	</application>
+	<!-- Login GK -->
+	<navigation-rule>
+		<from-view-id>/pages/login.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>loginSuccess</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>loginfailure</from-outcome>
+			<to-view-id>/pages/login.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+
+
+
+<!-- Logout -->
+
+<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>logout</from-outcome>
+			<to-view-id>/pages/login.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+    				<!-- Ganga Kalyana Modules -->
+
+	<!-- Program -->
+	<navigation-rule>
+		<from-view-id>/pages/program.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>addProgramPg</from-outcome>
+			<to-view-id>/pages/registrationAddNew.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>editProgramPg</from-outcome>
+			<to-view-id>/pages/program_Edit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Program Search -->
+	<navigation-rule>
+		<from-view-id>/pages/program.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>srchSuccess</from-outcome>
+			<to-view-id>/pages/program.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>srchSuccess</from-outcome>
+			<to-view-id>/pages/program.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Program Add -->
+	<navigation-rule>
+		<from-view-id>/pages/registrationAddNew.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>addSuccess</from-outcome>
+			<to-view-id>/pages/prgSaveSuces.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/program.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>addFailure</from-outcome>
+			<to-view-id>/pages/registrationAddNew.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/pages/prgSaveSuces.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>okProgram</from-outcome>
+			<to-view-id>/pages/program.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Program Edit -->
+	<navigation-rule>
+		<from-view-id>/pages/program_Edit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>updateSuccess</from-outcome>
+			<to-view-id>/pages/prgUpdtSuces.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/program.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>updateFaliure</from-outcome>
+			<to-view-id>/pages/program_Edit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/pages/prgUpdtSuces.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>okProgram</from-outcome>
+			<to-view-id>/pages/program.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- Estimation -->
+	<navigation-rule>
+		<from-view-id>/pages/estimateEdit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>updateEstimateSuccess</from-outcome>
+			<to-view-id>/pages/estimateUpdateSuccess.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/estimateEdit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/estimateView.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/estimateEdit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>noSearchEstimate</from-outcome>
+			<to-view-id>/pages/estimateEdit.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/estimateView.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sndEstimateEdit</from-outcome>
+			<to-view-id>/pages/estimateEdit.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sndEstmtView</from-outcome>
+			<to-view-id>/pages/estimateView.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/estimateView.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>seachEstimate</from-outcome>
+			<to-view-id>/pages/estimateView.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>seachEstimate</from-outcome>
+			<to-view-id>/pages/estimateView.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/estimateUpdateSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/estimateView.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- Service Details Stage -->
+	<navigation-rule>
+		<from-view-id>/pages/serviceDetails.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>serviceDetails</from-outcome>
+			<to-view-id>/pages/serviceDetailsEdit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/home.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>displayData</from-outcome>
+			<to-view-id>/pages/serviceDetails.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/serviceDetailsEdit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>serviceDetailsUpdated</from-outcome>
+			<to-view-id>/pages/serviceDetailsUpadted.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>validatefail</from-outcome>
+			<to-view-id>/pages/serviceDetailsEdit.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancelEdit</from-outcome>
+			<to-view-id>/pages/serviceDetails.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/serviceDetails.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>searchSuccess</from-outcome>
+			<to-view-id>/pages/serviceDetails.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>searchSuccess</from-outcome>
+			<to-view-id>/pages/serviceDetails.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/serviceDetailsUpadted.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>seviceEdit</from-outcome>
+			<to-view-id>/pages/serviceDetails.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+
+    <!-- Intimation Deposit -->
+	<navigation-rule>
+		<from-view-id>/pages/intimationDeposit.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>intimationDeposit</from-outcome>
+			<to-view-id>/pages/intimationDepositEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>intimationDepositHome</from-outcome>
+			<to-view-id>/pages/intimationDeposit.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>intimationDepositHome</from-outcome>
+			<to-view-id>/pages/intimationDeposit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/intimationDepositEntry.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>updateSuccess</from-outcome>
+			<to-view-id>/pages/depositSavedSuccess.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>intimationDeposit</from-outcome>
+			<to-view-id>/pages/intimationDepositEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>updateFailure</from-outcome>
+			<to-view-id>/pages/depositSavedFailure.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>intimationDepositHome</from-outcome>
+			<to-view-id>/pages/intimationDeposit.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+<!-- Work Order -->
+
+	<navigation-rule>
+		<from-view-id>/pages/workOrder.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>workOrder</from-outcome>
+			<to-view-id>/pages/workOrderEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workworkOrderHome</from-outcome>
+			<to-view-id>/pages/workOrder.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/workOrderEntry.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>workOrderUpdateSuccess</from-outcome>
+			<to-view-id>/pages/workOrderSavedSuccess.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workOrder</from-outcome>
+			<to-view-id>/pages/workOrderEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workOrderUpdateFailure</from-outcome>
+			<to-view-id>/pages/workOrderSavedfailure.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workOrderHome</from-outcome>
+			<to-view-id>/pages/workOrder.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>workOrderHome</from-outcome>
+			<to-view-id>/pages/workOrder.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+<!-- Work Award -->
+
+	<navigation-rule>
+		<from-view-id>/pages/workAward.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>workAward</from-outcome>
+			<to-view-id>/pages/workAwardEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workworkAwardHome</from-outcome>
+			<to-view-id>/pages/workAward.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/workAwardEntry.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>workAwardUpdateSuccess</from-outcome>
+			<to-view-id>/pages/workAwardSavedSuccess.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workAward</from-outcome>
+			<to-view-id>/pages/workAwardEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workAwardUpdateFailure</from-outcome>
+			<to-view-id>/pages/workAwardSavedfailure.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workAwardHome</from-outcome>
+			<to-view-id>/pages/workAward.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>workAwardHome</from-outcome>
+			<to-view-id>/pages/workAward.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+
+  			<!-- Work Status -->
+	<navigation-rule>
+		<from-view-id>/pages/workStatus.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>workStatus</from-outcome>
+			<to-view-id>/pages/workStatusEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workStatusHome</from-outcome>
+			<to-view-id>/pages/workStatus.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/workStatusEntry.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>workStatusUpdateSuccess</from-outcome>
+			<to-view-id>/pages/workStatusSavedSuccess.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workStatus</from-outcome>
+			<to-view-id>/pages/workStatusEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workStatusUpdateFailure</from-outcome>
+			<to-view-id>/pages/workStatusSavedfailure.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>workStatusHome</from-outcome>
+			<to-view-id>/pages/workStatus.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>workStatusHome</from-outcome>
+			<to-view-id>/pages/workStatus.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+    <!-- Ganga Kalyana Reports -->
+
+
+    <!-- Scheme Wise Report -->
+	<navigation-rule>
+		<from-view-id>/pages/schemeWiseReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>schemewiseReport</from-outcome>
+			<to-view-id>/pages/schemeWiseReport.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Program Details Report -->
+	<navigation-rule>
+		<from-view-id>/pages/prgDetailsRepEntry.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>prgDetailsLst</from-outcome>
+			<to-view-id>/pages/prgDetailsRepEntry.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>prgDetailsDisp</from-outcome>
+			<to-view-id>/pages/prgDetailsRepDisp.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>prgDetalFailure</from-outcome>
+			<to-view-id>/pages/prgDetailsRepEntry.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/pages/prgDetailsRepDisp.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>back</from-outcome>
+			<to-view-id>/pages/prgDetailsRepEntry.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Status Wise Report -->
+	<navigation-rule>
+		<from-view-id>/pages/statusWiseReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>statusWiseReport</from-outcome>
+			<to-view-id>/pages/statusWiseReport.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Stage Wise Report -->
+	<navigation-rule>
+		<from-view-id>/pages/stageWiseReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>stagewiseReport</from-outcome>
+			<to-view-id>/pages/stageWiseReport.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+    <!-- Ageing Service Report -->
+	<navigation-rule>
+		<from-view-id>/pages/ageingServiceReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>ageingServiceReport</from-outcome>
+			<to-view-id>/pages/ageingServiceReport.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+    	   
+
+
+
+         <!-- BMAZ Modules -->
+
+
+	<!-- Transformer -->
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>transPage</from-outcome>
+			<to-view-id>/pages/transformer.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/transformer.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>saveTransformer</from-outcome>
+			<to-view-id>/pages/transSaveSuccess.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/transformer.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>transformerMonthDetails</from-outcome>
+			<to-view-id>/pages/transformer.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/pages/transformer.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancelTransData</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+
+	<navigation-rule>
+		<from-view-id>/pages/transSaveSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancelTrans</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/transformer.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>valdateTransformer</from-outcome>
+			<to-view-id>/pages/transformer.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- Door Lock -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>doorLockPage</from-outcome>
+			<to-view-id>/pages/doorLock.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/doorLock.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>saveDoorLockDetilas</from-outcome>
+			<to-view-id>/pages/doorLockSaveSuccess.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failureDoorLockDetilas</from-outcome>
+			<to-view-id>/pages/doorLock.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/doorLockSaveSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>okButton</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/doorLock.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/doorLock.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>drExist</from-outcome>
+			<to-view-id>/pages/doorLock.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Feeder Interruption -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>fdInterruption</from-outcome>
+			<to-view-id>/pages/feederInterruption.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/feederInterruption.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>fdiSavedSuces</from-outcome>
+			<to-view-id>/pages/fdiSaveSuccess.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>fdiFailed2Save</from-outcome>
+			<to-view-id>/pages/feederInterruption.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/fdiSaveSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	
+
+	<!-- MNR -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>mnrPg</from-outcome>
+			<to-view-id>/pages/mnr.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/mnr.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>mnrSavedSuces</from-outcome>
+			<to-view-id>/pages/mnrSaveSuccess.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>mnrFailed2Save</from-outcome>
+			<to-view-id>/pages/mnr.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/mnr.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/mnrSaveSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Zero Consumption -->
+	<navigation-rule>
+		<from-view-id>/pages/zeroConsumption.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>zeroConSuces</from-outcome>
+			<to-view-id>/pages/zeroConsumption.xhtml</to-view-id>
+			<redirect/>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>zeroConPg</from-outcome>
+			<to-view-id>/pages/zeroConsumption.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/zeroConsumption.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>zeroConSavedSuces</from-outcome>
+			<to-view-id>/pages/zeroConSaveSuces.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>zeroConSavedFail</from-outcome>
+			<to-view-id>/pages/zeroConsumption.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/zeroConSaveSuces.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- DisConnection -->
+	<navigation-rule>
+		<from-view-id>/pages/disConnection.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/disconnectionSuccess.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>disconnectionFailure</from-outcome>
+			<to-view-id>/pages/disConnection.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/disConnection.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancelHomePage</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/disConnection.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/disconnectionSuccess.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/disconnectionSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Home</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+  
+
+
+    <!-- Revenue -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>revenueEntryPg</from-outcome>
+			<to-view-id>/pages/revenueEntry.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/revenueEntry.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>revenueSaveSuccess</from-outcome>
+			<to-view-id>/pages/revenueSaveSuccess.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>revenueEntryPg</from-outcome>
+			<to-view-id>/pages/revenueEntry.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/revenueSaveSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancel</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+   <!-- Installation-->
+	<navigation-rule>
+		<from-view-id>/pages/instalation.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/instalationSuccess.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failureInstall</from-outcome>
+			<to-view-id>/pages/instalation.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/instalationSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Home</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/pages/instalation.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancelHomePage</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+     <!-- Tariff DCA -->
+
+	<navigation-rule>
+		<from-view-id>/pages/TariffDCA.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>saveFailed</from-outcome>
+			<to-view-id>/pages/TariffDCA.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/TariffDCA.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/transSaveSuccess.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/tarifSaveSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/tarifView.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/TariffDCA.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>saveTariff</from-outcome>
+			<to-view-id>/pages/tarifSaveSuccess.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>failTariff</from-outcome>
+			<to-view-id>/pages/TariffDCA.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<navigation-rule>
+		<from-view-id>/pages/TariffDCA.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>getTariffDetails</from-outcome>
+			<to-view-id>/pages/TariffDCA.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>/pages/tarifSaveSuccess.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>cancelTariff</from-outcome>
+			<to-view-id>/pages/home.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>tariffDcaPage</from-outcome>
+			<to-view-id>/pages/TariffDCA.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+ 
+ 
+ 
+ 
+
+	<!-- BMAZ Detail Reports -->
+	<navigation-rule>
+		<from-view-id>*</from-view-id>
+		<navigation-case>
+			<from-outcome>reportPage</from-outcome>
+			<to-view-id>/pages/bmazReports.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	
+	         <!-- Feeder Interruption  -->
+	<navigation-rule>
+		<from-view-id>/pages/feederInterruptionReports.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>success</from-outcome>
+			<to-view-id>/pages/feederInterruptionReports.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>fdrReportFailure</from-outcome>
+			<to-view-id>/pages/feederInterruptionReports.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+
+	<!-- MNR REPORT -->
+	<navigation-rule>
+		<from-view-id>/pages/bmazReports.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>mnrRep</from-outcome>
+			<to-view-id>/pages/mnrReport.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/mnrReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>mnrRepFailure</from-outcome>
+			<to-view-id>/pages/mnrReport.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- Transformers Report -->
+	<navigation-rule>
+		<from-view-id>/pages/transformerReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>transformerDetails</from-outcome>
+			<to-view-id>/pages/transformerReport.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>transformerFailure</from-outcome>
+			<to-view-id>/pages/transformerReport.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Disconnection Report -->
+	<navigation-rule>
+		<from-view-id>/pages/disconnectionRep.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>disconnectionReport</from-outcome>
+			<to-view-id>/pages/disconnectionRep.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>disconnectionReportFailure</from-outcome>
+			<to-view-id>/pages/disconnectionRep.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+
+	<!-- Tariff DCA Report -->
+	<navigation-rule>
+		<from-view-id>/pages/tarifReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>traiffDetails</from-outcome>
+			<to-view-id>/pages/tarifReport.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>traiffDetailsFailure</from-outcome>
+			<to-view-id>/pages/tarifReport.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+
+      <!-- Zero Consumption Report -->
+	<navigation-rule>
+		<from-view-id>/pages/zeroConReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>zeroConRep</from-outcome>
+			<to-view-id>/pages/zeroConReport.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- Revenue Detail Report -->
+	<navigation-rule>
+		<from-view-id>/pages/revenueReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>revenueReport</from-outcome>
+			<to-view-id>/pages/revenueReport.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>revenueFailureReport</from-outcome>
+			<to-view-id>/pages/revenueReport.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- Installation Report -->
+	<navigation-rule>
+		<from-view-id>/pages/instalationRep.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>instalationRep</from-outcome>
+			<to-view-id>/pages/instalationRep.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+    <!-- Door Lock Detail Report -->
+
+    <navigation-rule>
+	<from-view-id>/pages/doorLockDetailReport.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>doorLockDetailReport</from-outcome>
+		<to-view-id>/pages/doorLockDetailReport.xhtml</to-view-id>
+	</navigation-case>
+</navigation-rule>
+    
+
+
+
+     
+     <!-- BMAZ Summary Reports -->
+	
+
+	<!-- tarifDCASumryReport -->
+	<navigation-rule>
+		<from-view-id>/pages/tarifDCASumryReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>tarifDCASumryReport</from-outcome>
+			<to-view-id>/pages/tarifDCASumryReport.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Transformer Summary Report -->
+	<navigation-rule>
+		<from-view-id>/pages/transformerSummaryReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>transformerSummary</from-outcome>
+			<to-view-id>/pages/transformerSummaryReport.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+
+	<!-- Disconnection summary report -->
+	<navigation-rule>
+	<from-view-id>/pages/summaryDisconnectionReports.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>summaryDisconnectionReports</from-outcome>
+		<to-view-id>/pages/summaryDisconnectionReports.xhtml</to-view-id>
+		<redirect></redirect>
+	</navigation-case>
+	<navigation-case>
+		<from-outcome>summaryDisconnectionReports1</from-outcome>
+		<to-view-id>/pages/summaryDisconnectionReports.xhtml</to-view-id>
+	</navigation-case>
+   </navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/summaryDisconnectionReports.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>disconnectionReport</from-outcome>
+			<to-view-id>/pages/disconnectionRep.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- mnr summary report -->
+	<navigation-rule>
+		<from-view-id>/pages/mnrReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>mnrReport</from-outcome>
+			<to-view-id>/pages/mnrReport.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+
+	</navigation-rule>
+
+	<!-- Summary Zero Consumption Report -->
+
+	<navigation-rule>
+		<from-view-id>/pages/summaryZeroConReport.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sumZCSuces</from-outcome>
+			<to-view-id>/pages/summaryZeroConReport.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Summary Feeder Interruption Report -->
+
+	<navigation-rule>
+		<from-view-id>/pages/summaryFeederInterruptionReports.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>sumFedInterRep</from-outcome>
+			<to-view-id>/pages/summaryFeederInterruptionReports.xhtml</to-view-id>
+			<redirect />
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- Installation Summary Report -->
+	<navigation-rule>
+		<from-view-id>/pages/instalationSumryRep.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>instalationSumryRep</from-outcome>
+			<to-view-id>/pages/instalationSumryRep.xhtml</to-view-id>
+		</navigation-case>
+
+	</navigation-rule>
+	
+	
+<!-- revenue report summary -->
+<navigation-rule>
+	<from-view-id>/pages/revenueReportSummary.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>revenueReportSummary</from-outcome>
+		<to-view-id>/pages/revenueReportSummary</to-view-id>
+		<redirect />
+	</navigation-case>
+</navigation-rule>
+
+ <!-- Door Lock  Summary Report -->
+<navigation-rule>
+	<from-view-id>/pages/doorLockReport.xhtml</from-view-id>
+	<navigation-case>
+		<from-outcome>doorLockSumryReport</from-outcome>
+		<to-view-id>/pages/doorLockReport.xhtml</to-view-id>
+		<redirect />
+	</navigation-case>
+</navigation-rule>
+
+</faces-config>

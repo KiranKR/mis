@@ -1,0 +1,205 @@
+<html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/pages/BaseTemplate.xhtml">
+
+
+
+
+
+	<ui:define name="body" onload="noBack();"
+		onpageshow="if (event.persisted) noBack();">
+
+		<script type="text/javascript">
+setTimeout(function focusIt()
+{
+  var mytext = document.getElementById("Successform:taluk"); 
+  mytext.focus(); 
+  mytext.select();
+}
+, 1);
+
+window.history.forward();
+function noBack() { window.history.forward();}
+</script>
+
+		<h:form id="Successform">
+			<div class="title_wrapper">
+				<h2>Registration Add Page</h2>
+				<span class="title_wrapper_left"></span> <span
+					class="title_wrapper_right"></span>
+			</div>
+			<div class="error">
+				<div class="error_inner">
+					<span><p:messages />
+					</span>
+				</div>
+			</div>
+			<div id="product_list">
+				<!--[if !IE]>start table_wrapper<![endif]-->
+				<div class="table_wrapper">
+					<div class="table_wrapper_inner">
+						<table width="100%">
+							<tr align="center">
+								<td class="box text" colspan="4"></td>
+							</tr>
+
+							<tr>
+								<td class="box text">Section <span class="star">*</span></td>
+								<td class="box text" ><p:selectOneMenu id="secId"
+										value="" tabindex="1"
+										style="height: 25px;position: top">
+										<f:selectItems value="#{pc_ANA.secLst}" />
+									</p:selectOneMenu></td>
+								
+								<td class="box text">Date</td>	
+								<td class="box text" colspan="2"><h:outputText value="#{pc_ANA.sysDateStr}" style="FONT-SIZE: x-small;"/></td>
+							
+							</tr>
+
+
+
+							<tr>
+								<td class="box text" colspan="5">Application Registration</td>
+						   </tr>
+						   <tr>
+						   		<td class="box text">Opening Balance</td>
+								<td class="box text" style="FONT-FAMILY: 'Arial';">Number Of New Application Registered</td>
+								<td class="box text">Number Of Installation Serviced</td>
+								<td class="box text" colspan="2">Closing Balance</td>
+							</tr>
+							<tr>
+								<td class="box text">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+								<td class="box text">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+								<td class="box text">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+								<td class="box text" colspan="2">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+							</tr>
+							<tr>
+								<td class="box text" colspan="5">Name transfer</td>
+						   </tr>
+						   <tr>
+						   		<td class="box text">Opening Balance</td>
+								<td class="box text">No of Application Received</td>
+								<td class="box text">No of Name Transfer Done</td>
+								<td class="box text" colspan="2">Closing Balance</td>
+							</tr>
+							<tr>
+								<td class="box text" style="FONT-SIZE: small;">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+								<td class="box text">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+								<td class="box text">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+								<td class="box text" colspan="2">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+							</tr>
+							
+							<tr>
+								<td class="box text" colspan="6">Accident</td>
+						   </tr>
+						   <tr>
+						   		<td class="box text">Opening Balance</td>
+								<td class="box text" style="FONT-FAMILY: 'Arial';">Number Of Accident Occured To Animal</td>
+								<td class="box text">Departmental</td>
+								<td class="box text" style="FONT-FAMILY: 'Agency FB';">Non-Departmental</td>
+								<td class="box text">Closing Balance</td>
+							</tr>
+							<tr>
+								<td></td>
+						   		<td class="box text">Number</td>
+								<td class="box text" rowspan="1" colspan="1">
+									<table width="100%">
+										<tr>
+											<td>Fatal</td>
+											<td>Non-Fatal</td>
+										</tr>
+									</table>
+								</td>
+								<td class="box text" rowspan="1" colspan="1">
+									<table width="100%">
+										<tr>
+											<td>Fatal</td>
+											<td>Non-Fatal</td>
+										</tr>
+									</table>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="box text">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+								<td class="box text">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+								<td class="box text" rowspan="1" colspan="1">
+									<table width="100%">
+										<tr>
+											<td><p:inputText value="" tabindex="2" /></td>
+											<td><p:inputText value="" tabindex="2" /></td>
+										</tr>
+									</table>
+								</td>
+								
+								<td class="box text" rowspan="1" colspan="1">
+									<table width="100%">
+										<tr>
+											<td><p:inputText value="" tabindex="2" /></td>
+											<td><p:inputText value="" tabindex="2" /></td>
+										</tr>
+									</table>
+								</td>
+								
+								<td class="box text">
+									<p:inputText value="" tabindex="2" />
+								</td>
+								
+							</tr>
+							
+							<tr>
+								<td></td>
+								<td></td>
+
+								<td align="right"><strong><h:commandButton
+											value="Save" action="#{pc_Program.addNewProgram}"
+											tabindex="10" styleClass="greenBtn" />
+								</strong></td>
+								<td><h:commandButton value="Cancel"
+										action="#{pc_Program.cancelProgram}" tabindex="11"
+										styleClass="greenBtn" /></td>
+								
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>

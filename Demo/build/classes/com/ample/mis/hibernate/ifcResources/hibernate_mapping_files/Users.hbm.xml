@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="UsersBO" table="users" catalog="mis">
+        <id name="userId" type="java.lang.Long">
+            <column name="USER_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="employee" class="EmployeeBO" fetch="select">
+            <column name="USER_EMP_ID" />
+        </many-to-one>
+        <property name="userName" type="string">
+            <column name="USER_NAME" length="50" not-null="true" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="USER_PASSWORD" length="250" not-null="true" />
+        </property>
+        <property name="userStatsFlag" type="int">
+            <column name="USER_STATS_FLAG" not-null="true" />
+        </property>
+        <property name="userLastAccessedDate" type="timestamp">
+            <column name="USER_LAST_ACCESSED_DATE" length="19" />
+        </property>
+        <property name="userPwdChangedDate" type="timestamp">
+            <column name="USER_PWD_CHANGED_DATE" length="19" />
+        </property>
+        <property name="userPwdExpDate" type="timestamp">
+            <column name="USER_PWD_EXP_DATE" length="19" />
+        </property>
+        <property name="userForgotUrl" type="string">
+            <column name="USER_FORGOT_URL" length="500" />
+        </property>
+        <property name="userForgotExpryDate" type="timestamp">
+            <column name="USER_FORGOT_EXPRY_DATE" length="19" />
+        </property>
+        <property name="userForgotUrlStats" type="java.lang.Boolean">
+            <column name="USER_FORGOT_URL_STATS" />
+        </property>
+        <property name="userCreatedBy" type="java.lang.Long">
+            <column name="USER_CREATED_BY" />
+        </property>
+        <property name="userCreatedDate" type="timestamp">
+            <column name="USER_CREATED_DATE" length="19" />
+        </property>
+        <property name="userLastUpdatedBy" type="java.lang.Long">
+            <column name="USER_LAST_UPDATED_BY" />
+        </property>
+        <property name="userLastUpdatedDate" type="timestamp">
+            <column name="USER_LAST_UPDATED_DATE" length="19" />
+        </property>
+        <set name="userRoleses" table="user_roles" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="USROL_USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="UserRolesBO" />
+        </set>
+        <set name="userMaps" table="user_map" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="UMAP_USER_ID" not-null="true" />
+            </key>
+            <one-to-many class="UserMapBO" />
+        </set>
+    </class>
+</hibernate-mapping>

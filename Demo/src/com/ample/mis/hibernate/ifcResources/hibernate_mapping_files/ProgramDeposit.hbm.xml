@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="ProgramDepositBO" table="program_deposit" catalog="mis">
+        <id name="pdpstId" type="java.lang.Long">
+            <column name="PDPST_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="programWorks" class="ProgramWorksBO" fetch="select">
+            <column name="PDPST_PWRK_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="deposit" class="DepositBO" fetch="select">
+            <column name="PDPST_DEPST_ID" not-null="true" />
+        </many-to-one>
+        <property name="pdpstAmount" type="double">
+            <column name="PDPST_AMOUNT" precision="15" not-null="true" />
+        </property>
+        <property name="pdpstRowStatus" type="boolean">
+            <column name="PDPST_ROW_STATUS" not-null="true" />
+        </property>
+        <property name="pdpstAplicableYn" type="java.lang.Boolean">
+            <column name="PDPST_APLICABLE_YN" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="ProgramSearchBO" table="program_search" catalog="mis">
+        <id name="psrchId" type="java.lang.Integer">
+            <column name="PSRCH_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="psrchName" type="string">
+            <column name="PSRCH_NAME" length="25" not-null="true" />
+        </property>
+        <property name="psrchRefColumn" type="string">
+            <column name="PSRCH_REF_COLUMN" length="25" not-null="true" />
+        </property>
+        <property name="psrchIdenFlag" type="int">
+            <column name="PSRCH_IDEN_FLAG" not-null="true" />
+        </property>
+        <property name="psrchRowStatus" type="boolean">
+            <column name="PSRCH_ROW_STATUS" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="ReportsBO" table="reports" catalog="mis">
+        <id name="repId" type="java.lang.Integer">
+            <column name="REP_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="module" class="ModuleBO" fetch="select">
+            <column name="REP_MOD_ID" not-null="true" />
+        </many-to-one>
+        <property name="repName" type="string">
+            <column name="REP_NAME" length="50" not-null="true" />
+        </property>
+        <property name="repOrder" type="java.lang.Integer">
+            <column name="REP_ORDER" />
+        </property>
+        <property name="repPath" type="string">
+            <column name="REP_PATH" length="250" />
+        </property>
+        <property name="repRowStatus" type="boolean">
+            <column name="REP_ROW_STATUS" not-null="true" />
+        </property>
+        <set name="reportMaps" table="report_map" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="RGM_REP_ID" not-null="true" />
+            </key>
+            <one-to-many class="ReportMapBO" />
+        </set>
+    </class>
+</hibernate-mapping>

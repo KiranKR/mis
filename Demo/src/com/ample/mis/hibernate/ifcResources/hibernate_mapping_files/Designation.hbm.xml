@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="DesignationBO" table="designation" catalog="mis">
+        <id name="desgId" type="java.lang.Integer">
+            <column name="DESG_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="desgShortCode" type="string">
+            <column name="DESG_SHORT_CODE" length="10" not-null="true" />
+        </property>
+        <property name="desgName" type="string">
+            <column name="DESG_NAME" length="50" not-null="true" />
+        </property>
+        <property name="desgFromDate" type="timestamp">
+            <column name="DESG_FROM_DATE" length="19" not-null="true" />
+        </property>
+        <property name="desgToDate" type="timestamp">
+            <column name="DESG_TO_DATE" length="19" />
+        </property>
+        <property name="desgRowStatus" type="boolean">
+            <column name="DESG_ROW_STATUS" not-null="true" />
+        </property>
+        <property name="desgCreatedBy" type="java.lang.Long">
+            <column name="DESG_CREATED_BY" />
+        </property>
+        <property name="desgCreatedDate" type="timestamp">
+            <column name="DESG_CREATED_DATE" length="19" />
+        </property>
+        <property name="desgLastUpdatedBy" type="java.lang.Long">
+            <column name="DESG_LAST_UPDATED_BY" />
+        </property>
+        <property name="desgLastUpdatedDate" type="timestamp">
+            <column name="DESG_LAST_UPDATED_DATE" length="19" />
+        </property>
+        <set name="employees" table="employee" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="EMP_DESG_ID" />
+            </key>
+            <one-to-many class="EmployeeBO" />
+        </set>
+    </class>
+</hibernate-mapping>

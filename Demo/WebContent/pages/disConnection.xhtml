@@ -1,0 +1,163 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/pages/BMAZBaseTemplate.xhtml">
+
+	<ui:define name="body">
+		<h:form id="form">
+			<div id="product_list">
+				<!--[if !IE]>start table_wrapper<![endif]-->
+				<div class="table_wrapper">
+					<div class="table_wrapper_inner">
+						<div class="title_wrapper">
+							<h2>Disconnection</h2>
+							<span class="title_wrapper_left"></span> <span
+								class="title_wrapper_right"></span>
+						</div>
+
+						<table width="100%">
+						 <tr> <p:messages id="erMsg"/> </tr>
+							<tr>
+								<td class="box text">Section</td>
+								<td><p:selectOneMenu value="#{pc_disConnection.bean.secId}" tabindex="1">
+										<f:selectItems value="#{pc_disConnection.secList}" />
+										<p:ajax update="obc,oba,vdm,ddm,rdm,ai,ar,cb,cba,saveBtn,reason,erMsg" listener="#{pc_disConnection.getDisconctnOB}" />  
+									</p:selectOneMenu>
+								</td>
+								<td class="box text">Month</td>
+								<td><p:selectOneMenu value="#{pc_disConnection.bean.mnthId}" tabindex="2">
+								<f:selectItem itemLabel="Select" itemValue="0"/>
+										<f:selectItems value="#{pc_disConnection.enumMonths}" />
+										<p:ajax update="obc,oba,vdm,ddm,rdm,ai,ar,cb,cba,saveBtn,reason,erMsg" listener="#{pc_disConnection.getDisconctnOB}" />
+									</p:selectOneMenu></td>
+								<td class="box text">Year</td>
+								<td><p:selectOneMenu value="#{pc_disConnection.bean.yearId}" tabindex="3">
+									  <f:selectItem itemLabel="Select" itemValue="0"/>
+									  <f:selectItem itemLabel="2012" itemValue="2012"/>
+									  <f:selectItem itemLabel="2013" itemValue="2013"/>
+									  <p:ajax update="obc,oba,vdm,ddm,rdm,ai,ar,cb,cba,saveBtn,reason,erMsg" listener="#{pc_disConnection.getDisconctnOB}" />
+									</p:selectOneMenu>
+								</td>
+							</tr>
+							<tr></tr>
+							<tr></tr>
+							<tr></tr>
+						</table>
+
+
+                        <table width="100%">
+                          <tr>
+                            <td></td>
+                            <td class="box text">(In Count)</td>
+                            <td></td>
+                            <td></td>
+                            <td class="box text">(In Amount)</td>
+                            <td></td>
+                          </tr>
+                          
+                          
+                          <tr>
+                            <td class="box text">Disconnection OB </td>
+                            <td>
+	                            <h:inputText id="obc" class="right_input" value="#{pc_disConnection.bean.openBal}" disabled="#{pc_disConnection.bean.viewOlyOB}" tabindex="4">
+	                            	<p:ajax event="blur" update="cb" listener="#{pc_disConnection.getDisconctnCB}" />
+	                            </h:inputText> 
+	                        </td>
+                            <td></td>
+                            <td class="box text">Amount OPBAL</td>
+                            <td><h:inputText id="oba" class="right_input" value="#{pc_disConnection.bean.openBalAmt}" disabled="#{pc_disConnection.bean.viewOlyOB}" tabindex="5">
+                            	<p:ajax event="blur" update="cba" listener="#{pc_disConnection.getDisconctnCBAmnt}" />
+                            	<f:convertNumber pattern="#,###,##0.00"/>
+                            	</h:inputText>
+                            </td>
+                            <td></td>
+                          </tr>
+                          
+                          
+                          <tr>
+                            <td class="box text">Visited during Month </td>
+                            <td></td>
+                            <td><h:inputText id="vdm" class="right_input" value="#{pc_disConnection.bean.visitDurMnth}" tabindex="6" /> </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>
+                        
+                         <tr>
+                            <td class="box text">Disconnected During Month</td>
+                            <td></td>
+                            <td>
+	                            <h:inputText id="ddm" class="right_input" value="#{pc_disConnection.bean.disconctDurMnth}" tabindex="7">
+	                            	<p:ajax event="blur" update="cb" listener="#{pc_disConnection.getDisconctnCB}" />
+	                            </h:inputText>
+                            </td>
+                            <td ></td>
+                            <td class="box text">Amount Involved</td>
+                            <td><h:inputText id="ai" class="right_input" value="#{pc_disConnection.bean.amtInv}" tabindex="8">
+                            <p:ajax event="blur" update="cba" listener="#{pc_disConnection.getDisconctnCBAmnt}" />
+                            </h:inputText>
+                            </td>
+                          </tr>
+                          
+                          
+                          <tr>
+                            <td class="box text">Reconnected during Month</td>
+                            <td></td>
+                            <td>
+	                            <h:inputText id="rdm" class="right_input" value="#{pc_disConnection.bean.reconctDurMnth}" tabindex="9">
+	                            	<p:ajax event="blur" update="cb" listener="#{pc_disConnection.getDisconctnCB}" />
+	                            </h:inputText>
+                            </td>
+                            <td ></td>
+                            <td class="box text">Amount Realised</td>
+                            <td>
+	                            <h:inputText id="ar" class="right_input" value="#{pc_disConnection.bean.amtRel}" tabindex="10">
+	                            	<p:ajax event="blur" update="cba" listener="#{pc_disConnection.getDisconctnCBAmnt}" />
+	                            </h:inputText>
+                            </td>
+                          </tr>
+                        
+                        
+                          <tr style="height: 10px"></tr>
+                        <tr>
+                            <td class="box text">Disconnection CB </td>
+                            <td><h:inputText id="cb" class="right_input" value="#{pc_disConnection.bean.closeBal}" disabled="true" /></td>
+                            <td></td>
+                            <td class="box text">Amount CB </td>
+                            <td><h:inputText id="cba" class="right_input" value="#{pc_disConnection.bean.closBalAmt}" disabled="true" >
+                            <f:convertNumber pattern="#,###,##0.00"/></h:inputText>
+                            </td>
+                            <td></td>
+                          </tr>
+                          
+                         <tr style="height: 10px"></tr>
+                        
+                        <tr>
+                            <td class="box text">Reason for not Disconnecting</td>
+                            <td colspan="5"  ><p:inputTextarea  id="reason"  value="#{pc_disConnection.bean.reason}" tabindex="11" cols="50" rows="5"/> </td>
+                           
+                          </tr>
+                          <tr style="height: 10px"></tr>
+                          </table>
+						   <table width="100%">
+						   <tr>
+						   
+						   <td width="500px"></td>
+						   <td align="left" width="100px" ><strong><h:commandButton id="saveBtn"
+											value="Save" action="#{pc_disConnection.saveData}"
+											tabindex="12" styleClass="#{pc_disConnection.btnCss}" disabled="#{pc_disConnection.btnDisable}" /> </strong></td>
+								<td width="100px"><h:commandButton value="cancel"
+										tabindex="13" action="#{pc_disConnection.cancelHome}"
+										styleClass="greenBtn" /></td>
+										<td></td>
+						   </tr>
+						 </table>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

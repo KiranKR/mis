@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="TariffBO" table="tariff" catalog="mis">
+        <id name="trfId" type="java.lang.Integer">
+            <column name="TRF_ID" />
+            <generator class="identity" />
+        </id>
+        <property name="trfName" type="string">
+            <column name="TRF_NAME" length="50" not-null="true" />
+        </property>
+        <property name="trfRowStatus" type="boolean">
+            <column name="TRF_ROW_STATUS" not-null="true" />
+        </property>
+        <set name="tariffDcas" table="tariff_dca" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="TDCA_TRF_ID" not-null="true" />
+            </key>
+            <one-to-many class="TariffDcaBO" />
+        </set>
+    </class>
+</hibernate-mapping>

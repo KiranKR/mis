@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="RevenueBO" table="revenue" catalog="mis">
+        <id name="revId" type="java.lang.Long">
+            <column name="REV_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="tranHead" class="TranHeadBO" fetch="select">
+            <column name="REV_TH_ID" not-null="true" />
+        </many-to-one>
+        <property name="revTotalInstalation" type="java.lang.Integer">
+            <column name="REV_TOTAL_INSTALATION" />
+        </property>
+        <property name="revInputEnergy" type="java.lang.Long">
+            <column name="REV_INPUT_ENERGY" />
+        </property>
+        <property name="revDcbEnergy" type="java.lang.Long">
+            <column name="REV_DCB_ENERGY" />
+        </property>
+        <property name="revDcbOb" type="java.lang.Double">
+            <column name="REV_DCB_OB" precision="15" />
+        </property>
+        <property name="revDemand" type="java.lang.Double">
+            <column name="REV_DEMAND" precision="15" />
+        </property>
+        <property name="revCollection" type="java.lang.Double">
+            <column name="REV_COLLECTION" precision="15" />
+        </property>
+        <property name="revDcbCb" type="java.lang.Double">
+            <column name="REV_DCB_CB" precision="15" />
+        </property>
+        <property name="revRemarks" type="string">
+            <column name="REV_REMARKS" length="250" />
+        </property>
+        <property name="revRowStatus" type="java.lang.Boolean">
+            <column name="REV_ROW_STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

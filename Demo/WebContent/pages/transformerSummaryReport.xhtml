@@ -1,0 +1,130 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui"
+	template="/pages/BMAZBaseTemplate.xhtml">
+
+	<ui:define name="body">
+		<h:form id="form">
+			<div id="product_list">
+				<!--[if !IE]>start table_wrapper<![endif]-->
+				<div class="table_wrapper">
+					<div class="table_wrapper_inner">
+						<div class="title_wrapper">
+							<h2>Transformers Summary Report</h2>
+							<span class="title_wrapper_left"></span> <span
+								class="title_wrapper_right"></span>
+						</div>
+
+
+						<table width="100%">
+						 <c:if test="#{pc_tranformerSumReport.dispPara}">
+							<tr>
+								<p:messages/>
+							</tr>
+							<tr>
+								<td  class="box text">From</td>
+                                <td class="box text">Month</td>
+                                <td><p:selectOneMenu value="#{pc_tranformerSumReport.fromMonthID}" tabindex="1">
+										<f:selectItem itemLabel="Select" itemValue="0"/>
+										<f:selectItems value="#{pc_tranformerSumReport.enumMonths}" />
+									</p:selectOneMenu></td> 
+								<td class="box text">Year</td>
+								<td><p:selectOneMenu id="fromYearId" tabindex="2"
+										value="#{pc_tranformerSumReport.fromYearID}">
+										<f:selectItem itemLabel="select" itemValue="0" />
+										<f:selectItem itemLabel="2012" itemValue="2012" />
+										<f:selectItem itemLabel="2013" itemValue="2013" />
+									</p:selectOneMenu>
+								</td>
+								<td class="box text">Urban/Rural</td>
+								<td><p:selectOneMenu id="urId"
+										value="#{pc_tranformerSumReport.idenFlag}" tabindex="3">
+										<f:selectItem itemLabel="select" itemValue="0" />
+										<f:selectItem itemLabel="Urban" itemValue="1" />
+										<f:selectItem itemLabel="Rural" itemValue="2" />
+										
+									</p:selectOneMenu>
+								</td>
+								</tr>
+								<tr>
+								<td  class="box text">To</td>
+                                <td class="box text">Month</td>
+                                <td><p:selectOneMenu value="#{pc_tranformerSumReport.toMonthID}" tabindex="4">
+										<f:selectItem itemLabel="Select" itemValue="0"/>
+										<f:selectItems value="#{pc_tranformerSumReport.enumMonths}" />
+									</p:selectOneMenu></td> 
+								<td class="box text">Year</td>
+								<td><p:selectOneMenu id="toYearId"
+										value="#{pc_tranformerSumReport.toYearId}" tabindex="5">
+										<f:selectItem itemLabel="select" itemValue="0" />
+										<f:selectItem itemLabel="2012" itemValue="2012" />
+										<f:selectItem itemLabel="2013" itemValue="2013" />
+									</p:selectOneMenu>
+								</td>
+								
+								
+								<td align="right" colspan="2"><strong><h:commandButton
+											value="Ok"
+											action="#{pc_tranformerSumReport.getTransData}"
+											tabindex="6" styleClass="greenBtn" /> </strong>
+								</td>
+							</tr>
+							</c:if>
+							<c:if test="#{pc_tranformerSumReport.backbtn}">
+							  
+							<tr>
+											<td colspan="7">
+											<p:breadCrumb>
+											<p:menuitem url="./home.jsf"></p:menuitem>
+												<c:forEach items="#{pc_tranformerSumReport.stackBeans}" var="path">
+													<p:menuitem value="#{path.name}"  action="#{pc_tranformerSumReport.back(path.lvl,path.id,path.slno)}" update="form" />
+												</c:forEach>
+											</p:breadCrumb>
+											</td>
+										</tr>
+							</c:if>
+						</table>
+						<table>
+									<thead>
+										<tr>
+											
+											<th  class="ui-state-default">#{pc_tranformerSumReport.header}</th>
+											<th  class="ui-state-default">Capacity Name</th>
+											<th  class="ui-state-default">Addition Count</th>
+											<th  class="ui-state-default">Failed Count</th>
+											<th  class="ui-state-default">Replaced Count</th>
+											<th  class="ui-state-default">Maintenance Count</th>
+										</tr>
+										
+                                 </thead>
+								<tbody>
+								        <c:forEach items="#{pc_tranformerSumReport.lstTransformerReportBeans}" var="trans">         
+								        <tr> 
+								        <td rowspan="#{trans.size}"><h:commandLink value="#{trans.label}" action="#{pc_tranformerSumReport.nextLevel(trans.id,trans.label)}" /></td>
+										<c:forEach items="#{trans.transformerDetailsBeans}" var="capRe">
+										<tr>
+										 <td><h:outputText value="#{capRe.capName}" style="float: right;">></h:outputText></td>
+										 <td><h:outputText value="#{capRe.additionCount}" style="float: right;">></h:outputText></td>
+										<td><h:outputText value="#{capRe.failedCount}" style="float: right;">></h:outputText></td>
+										<td><h:outputText value="#{capRe.replacedCount}" style="float: right;">></h:outputText></td>
+										<td><h:outputText value="#{capRe.maintanceCount}" style="float: right;">></h:outputText></td>
+										</tr>
+											</c:forEach>
+									</tr>
+									</c:forEach>	
+                                </tbody>
+									<tfoot></tfoot>
+								</table>
+
+					</div>
+				</div>
+			</div>
+
+		</h:form>
+
+
+	</ui:define>
+</ui:composition>

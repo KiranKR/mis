@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 13, 2012 11:32:17 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="com.ample.mis.hibernate.bo">
+    <class name="RolModActionBO" table="rol_mod_action" catalog="mis">
+        <id name="rlmapId" type="java.lang.Integer">
+            <column name="RLMAP_ID" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="role" class="RoleBO" fetch="select">
+            <column name="RLMAP_ROLE_ID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="modAction" class="ModActionBO" fetch="select">
+            <column name="RLMAP_MACN_ID" not-null="true" />
+        </many-to-one>
+        <property name="rlmapRowStatus" type="boolean">
+            <column name="RLMAP_ROW_STATUS" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

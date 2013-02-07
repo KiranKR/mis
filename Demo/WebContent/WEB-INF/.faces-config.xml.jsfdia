@@ -1,0 +1,1065 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="64,401,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#pages#login.xhtml" NAME="output"
+    PATH="/pages/login.xhtml" TARGET="rules:#pages#login.xhtml"
+    TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#program.xhtml"
+  PATH="/pages/program.xhtml" SHAPE="64,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#program.xhtml:0" NAME="item"
+   PATH="/pages/program.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="addProgramPg::#pages#registrationAddNew.xhtml" NAME="output"
+    PATH="/pages/registrationAddNew.xhtml"
+    TARGET="rules:#pages#registrationAddNew.xhtml" TITLE="addProgramPg" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editProgramPg::#pages#program_Edit.xhtml"
+    NAME="output1" PATH="/pages/program_Edit.xhtml"
+    TARGET="rules:#pages#program_Edit.xhtml" TITLE="editProgramPg" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#program.xhtml:1" NAME="item1"
+   PATH="/pages/program.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="srchSuccess::#pages#program.xhtml"
+    NAME="output" PATH="/pages/program.xhtml"
+    TARGET="rules:#pages#program.xhtml" TITLE="srchSuccess" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#prgSaveSuces.xhtml"
+  PATH="/pages/prgSaveSuces.xhtml" SHAPE="336,577,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#prgSaveSuces.xhtml:0" NAME="item"
+   PATH="/pages/prgSaveSuces.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="okProgram::#pages#program.xhtml"
+    NAME="output" PATH="/pages/program.xhtml"
+    TARGET="rules:#pages#program.xhtml" TITLE="okProgram" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#program_Edit.xhtml"
+  PATH="/pages/program_Edit.xhtml" SHAPE="96,737,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#program_Edit.xhtml:0" NAME="item"
+   PATH="/pages/program_Edit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="updateSuccess::#pages#prgUpdtSuces.xhtml"
+    NAME="output" PATH="/pages/prgUpdtSuces.xhtml"
+    TARGET="rules:#pages#prgUpdtSuces.xhtml" TITLE="updateSuccess" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#program.xhtml" NAME="output1"
+    PATH="/pages/program.xhtml" TARGET="rules:#pages#program.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="updateFaliure::#pages#program_Edit.xhtml"
+    NAME="output2" PATH="/pages/program_Edit.xhtml"
+    TARGET="rules:#pages#program_Edit.xhtml" TITLE="updateFaliure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#prgUpdtSuces.xhtml"
+  PATH="/pages/prgUpdtSuces.xhtml" SHAPE="336,753,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#prgUpdtSuces.xhtml:0" NAME="item"
+   PATH="/pages/prgUpdtSuces.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="okProgram::#pages#program.xhtml"
+    NAME="output" PATH="/pages/program.xhtml"
+    TARGET="rules:#pages#program.xhtml" TITLE="okProgram" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#estimateEdit.xhtml"
+  PATH="/pages/estimateEdit.xhtml" SHAPE="544,913,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#estimateEdit.xhtml:0" NAME="item"
+   PATH="/pages/estimateEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="updateEstimateSuccess::#pages#estimateUpdateSuccess.xhtml"
+    NAME="output" PATH="/pages/estimateUpdateSuccess.xhtml"
+    TARGET="rules:#pages#estimateUpdateSuccess.xhtml"
+    TITLE="updateEstimateSuccess" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#estimateEdit.xhtml:1" NAME="item1"
+   PATH="/pages/estimateEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#estimateView.xhtml"
+    NAME="output" PATH="/pages/estimateView.xhtml"
+    TARGET="rules:#pages#estimateView.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#estimateEdit.xhtml:2" NAME="item2"
+   PATH="/pages/estimateEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="noSearchEstimate::#pages#estimateEdit.xhtml"
+    NAME="output" PATH="/pages/estimateEdit.xhtml"
+    TARGET="rules:#pages#estimateEdit.xhtml" TITLE="noSearchEstimate" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#estimateView.xhtml"
+  PATH="/pages/estimateView.xhtml" SHAPE="320,929,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#estimateView.xhtml:0" NAME="item"
+   PATH="/pages/estimateView.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sndEstimateEdit::#pages#estimateEdit.xhtml"
+    NAME="output" PATH="/pages/estimateEdit.xhtml"
+    TARGET="rules:#pages#estimateEdit.xhtml" TITLE="sndEstimateEdit" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#estimateView.xhtml:1" NAME="item1"
+   PATH="/pages/estimateView.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="seachEstimate::#pages#estimateView.xhtml"
+    NAME="output" PATH="/pages/estimateView.xhtml"
+    TARGET="rules:#pages#estimateView.xhtml" TITLE="seachEstimate" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#home.xhtml" PATH="/pages/home.xhtml"
+  SHAPE="48,913,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#home.xhtml:0" NAME="item"
+   PATH="/pages/home.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="sndEstmtView::#pages#estimateView.xhtml"
+    NAME="output" PATH="/pages/estimateView.xhtml"
+    TARGET="rules:#pages#estimateView.xhtml" TITLE="sndEstmtView" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#home.xhtml:1" NAME="item1"
+   PATH="/pages/home.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="displayData::#pages#serviceDetails.xhtml"
+    NAME="output" PATH="/pages/serviceDetails.xhtml"
+    TARGET="rules:#pages#serviceDetails.xhtml" TITLE="displayData" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:1" PATH="*" SHAPE="48,1265,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:1" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="srchSuccess::#pages#program.xhtml"
+    NAME="output" PATH="/pages/program.xhtml"
+    TARGET="rules:#pages#program.xhtml" TITLE="srchSuccess" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#estimateUpdateSuccess.xhtml"
+  PATH="/pages/estimateUpdateSuccess.xhtml" SHAPE="48,1377,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#estimateUpdateSuccess.xhtml:0"
+   NAME="item" PATH="/pages/estimateUpdateSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#estimateView.xhtml"
+    NAME="output" PATH="/pages/estimateView.xhtml"
+    TARGET="rules:#pages#estimateView.xhtml" TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#intimationDeposit.xhtml"
+  PATH="/pages/intimationDeposit.xhtml" SHAPE="32,1489,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#intimationDeposit.xhtml:0" NAME="item"
+   PATH="/pages/intimationDeposit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="intimationDeposit::#pages#intimationDepositEntry.xhtml"
+    NAME="output" PATH="/pages/intimationDepositEntry.xhtml"
+    TARGET="rules:#pages#intimationDepositEntry.xhtml"
+    TITLE="intimationDeposit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="intimationDepositHome::#pages#intimationDeposit.xhtml"
+    NAME="output1" PATH="/pages/intimationDeposit.xhtml"
+    TARGET="rules:#pages#intimationDeposit.xhtml"
+    TITLE="intimationDepositHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#intimationDepositEntry.xhtml"
+  PATH="/pages/intimationDepositEntry.xhtml" SHAPE="256,1505,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#intimationDepositEntry.xhtml:0"
+   NAME="item" PATH="/pages/intimationDepositEntry.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="updateSuccess::#pages#depositSavedSuccess.xhtml" NAME="output"
+    PATH="/pages/depositSavedSuccess.xhtml"
+    TARGET="rules:#pages#depositSavedSuccess.xhtml"
+    TITLE="updateSuccess" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="intimationDeposit::#pages#intimationDepositEntry.xhtml"
+    NAME="output1" PATH="/pages/intimationDepositEntry.xhtml"
+    TARGET="rules:#pages#intimationDepositEntry.xhtml"
+    TITLE="intimationDeposit" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="updateFailure::#pages#depositSavedFailure.xhtml" NAME="output2"
+    PATH="/pages/depositSavedFailure.xhtml"
+    TARGET="rules:#pages#depositSavedFailure.xhtml"
+    TITLE="updateFailure" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="intimationDepositHome::#pages#intimationDeposit.xhtml"
+    NAME="output3" PATH="/pages/intimationDeposit.xhtml"
+    TARGET="rules:#pages#intimationDeposit.xhtml"
+    TITLE="intimationDepositHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#workStatus.xhtml"
+  PATH="/pages/workStatus.xhtml" SHAPE="32,1745,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#workStatus.xhtml:0" NAME="item"
+   PATH="/pages/workStatus.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="workStatus::#pages#workStatusEntry.xhtml"
+    NAME="output" PATH="/pages/workStatusEntry.xhtml"
+    TARGET="rules:#pages#workStatusEntry.xhtml" TITLE="workStatus" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workStatusHome::#pages#workStatus.xhtml"
+    NAME="output1" PATH="/pages/workStatus.xhtml"
+    TARGET="rules:#pages#workStatus.xhtml" TITLE="workStatusHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#workStatusEntry.xhtml"
+  PATH="/pages/workStatusEntry.xhtml" SHAPE="256,1761,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#workStatusEntry.xhtml:0" NAME="item"
+   PATH="/pages/workStatusEntry.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="workStatusUpdateSuccess::#pages#workStatusSavedSuccess.xhtml"
+    NAME="output" PATH="/pages/workStatusSavedSuccess.xhtml"
+    TARGET="rules:#pages#workStatusSavedSuccess.xhtml"
+    TITLE="workStatusUpdateSuccess" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workStatus::#pages#workStatusEntry.xhtml"
+    NAME="output1" PATH="/pages/workStatusEntry.xhtml"
+    TARGET="rules:#pages#workStatusEntry.xhtml" TITLE="workStatus" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="workStatusUpdateFailure::#pages#workStatusSavedfailure.xhtml"
+    NAME="output2" PATH="/pages/workStatusSavedfailure.xhtml"
+    TARGET="rules:#pages#workStatusSavedfailure.xhtml"
+    TITLE="workStatusUpdateFailure" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workStatusHome::#pages#workStatus.xhtml"
+    NAME="output3" PATH="/pages/workStatus.xhtml"
+    TARGET="rules:#pages#workStatus.xhtml" TITLE="workStatusHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#serviceDetails.xhtml"
+  PATH="/pages/serviceDetails.xhtml" SHAPE="320,1105,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#serviceDetails.xhtml:0" NAME="item"
+   PATH="/pages/serviceDetails.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="serviceDetails::#pages#serviceDetailsEdit.xhtml" NAME="output"
+    PATH="/pages/serviceDetailsEdit.xhtml"
+    TARGET="rules:#pages#serviceDetailsEdit.xhtml"
+    TITLE="serviceDetails" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#serviceDetails.xhtml:1" NAME="item1"
+   PATH="/pages/serviceDetails.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="searchSuccess::#pages#serviceDetails.xhtml"
+    NAME="output" PATH="/pages/serviceDetails.xhtml"
+    TARGET="rules:#pages#serviceDetails.xhtml" TITLE="searchSuccess" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#serviceDetailsEdit.xhtml"
+  PATH="/pages/serviceDetailsEdit.xhtml" SHAPE="48,1089,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#serviceDetailsEdit.xhtml:0" NAME="item"
+   PATH="/pages/serviceDetailsEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="serviceDetailsUpdated::#pages#serviceDetailsUpadted.xhtml"
+    NAME="output" PATH="/pages/serviceDetailsUpadted.xhtml"
+    TARGET="rules:#pages#serviceDetailsUpadted.xhtml"
+    TITLE="serviceDetailsUpdated" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="validatefail::#pages#serviceDetailsEdit.xhtml" NAME="output1"
+    PATH="/pages/serviceDetailsEdit.xhtml"
+    TARGET="rules:#pages#serviceDetailsEdit.xhtml" TITLE="validatefail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancelEdit::#pages#serviceDetails.xhtml"
+    NAME="output2" PATH="/pages/serviceDetails.xhtml"
+    TARGET="rules:#pages#serviceDetails.xhtml" TITLE="cancelEdit" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#serviceDetailsUpadted.xhtml"
+  PATH="/pages/serviceDetailsUpadted.xhtml" SHAPE="320,1281,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#serviceDetailsUpadted.xhtml:0"
+   NAME="item" PATH="/pages/serviceDetailsUpadted.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="seviceEdit::#pages#serviceDetails.xhtml"
+    NAME="output" PATH="/pages/serviceDetails.xhtml"
+    TARGET="rules:#pages#serviceDetails.xhtml" TITLE="seviceEdit" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:2" PATH="*" SHAPE="96,337,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:2" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="seachEstimate::#pages#estimateView.xhtml"
+    NAME="output" PATH="/pages/estimateView.xhtml"
+    TARGET="rules:#pages#estimateView.xhtml" TITLE="seachEstimate" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#depositSavedFailure.xhtml"
+  PATH="/pages/depositSavedFailure.xhtml" SHAPE="480,1633,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#depositSavedSuccess.xhtml"
+  PATH="/pages/depositSavedSuccess.xhtml" SHAPE="480,1489,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#workStatusSavedSuccess.xhtml"
+  PATH="/pages/workStatusSavedSuccess.xhtml" SHAPE="480,1745,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#workStatusSavedfailure.xhtml"
+  PATH="/pages/workStatusSavedfailure.xhtml" SHAPE="480,1889,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:*:3" PATH="*" SHAPE="48,2033,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:3" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="searchSuccess::#pages#serviceDetails.xhtml"
+    NAME="output" PATH="/pages/serviceDetails.xhtml"
+    TARGET="rules:#pages#serviceDetails.xhtml" TITLE="searchSuccess" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:4" PATH="*" SHAPE="64,2321,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:4" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="intimationDepositHome::#pages#intimationDeposit.xhtml"
+    NAME="output" PATH="/pages/intimationDeposit.xhtml"
+    TARGET="rules:#pages#intimationDeposit.xhtml"
+    TITLE="intimationDepositHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:5" PATH="*" SHAPE="64,2433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:5" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="workOrderHome::#pages#workOrder.xhtml"
+    NAME="output" PATH="/pages/workOrder.xhtml"
+    TARGET="rules:#pages#workOrder.xhtml" TITLE="workOrderHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#schemeWiseReport.xhtml"
+  PATH="/pages/schemeWiseReport.xhtml" SHAPE="32,2721,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#schemeWiseReport.xhtml:0" NAME="item"
+   PATH="/pages/schemeWiseReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="schemewiseReport::#pages#schemeWiseReport.xhtml" NAME="output"
+    PATH="/pages/schemeWiseReport.xhtml"
+    TARGET="rules:#pages#schemeWiseReport.xhtml"
+    TITLE="schemewiseReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#prgDetailsRepEntry.xhtml"
+  PATH="/pages/prgDetailsRepEntry.xhtml" SHAPE="272,2561,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#prgDetailsRepEntry.xhtml:0" NAME="item"
+   PATH="/pages/prgDetailsRepEntry.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="prgDetailsLst::#pages#prgDetailsRepEntry.xhtml" NAME="output"
+    PATH="/pages/prgDetailsRepEntry.xhtml"
+    TARGET="rules:#pages#prgDetailsRepEntry.xhtml" TITLE="prgDetailsLst" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="prgDetailsDisp::#pages#prgDetailsRepDisp.xhtml" NAME="output1"
+    PATH="/pages/prgDetailsRepDisp.xhtml"
+    TARGET="rules:#pages#prgDetailsRepDisp.xhtml" TITLE="prgDetailsDisp" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="prgDetalFailure::#pages#prgDetailsRepEntry.xhtml" NAME="output2"
+    PATH="/pages/prgDetailsRepEntry.xhtml"
+    TARGET="rules:#pages#prgDetailsRepEntry.xhtml"
+    TITLE="prgDetalFailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#prgDetailsRepDisp.xhtml"
+  PATH="/pages/prgDetailsRepDisp.xhtml" SHAPE="32,2545,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#prgDetailsRepDisp.xhtml:0" NAME="item"
+   PATH="/pages/prgDetailsRepDisp.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#pages#prgDetailsRepEntry.xhtml"
+    NAME="output" PATH="/pages/prgDetailsRepEntry.xhtml"
+    TARGET="rules:#pages#prgDetailsRepEntry.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#statusWiseReport.xhtml"
+  PATH="/pages/statusWiseReport.xhtml" SHAPE="32,3169,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#statusWiseReport.xhtml:0" NAME="item"
+   PATH="/pages/statusWiseReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="statusWiseReport::#pages#statusWiseReport.xhtml" NAME="output"
+    PATH="/pages/statusWiseReport.xhtml"
+    TARGET="rules:#pages#statusWiseReport.xhtml"
+    TITLE="statusWiseReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#stageWiseReport.xhtml"
+  PATH="/pages/stageWiseReport.xhtml" SHAPE="32,3169,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#stageWiseReport.xhtml:0" NAME="item"
+   PATH="/pages/stageWiseReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="stagewiseReport::#pages#stageWiseReport.xhtml" NAME="output"
+    PATH="/pages/stageWiseReport.xhtml"
+    TARGET="rules:#pages#stageWiseReport.xhtml" TITLE="stagewiseReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#transformer.xhtml"
+  PATH="/pages/transformer.xhtml" SHAPE="48,3969,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#transformer.xhtml:0" NAME="item"
+   PATH="/pages/transformer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="saveTransformer::#pages#transSaveSuccess.xhtml" NAME="output"
+    PATH="/pages/transSaveSuccess.xhtml"
+    TARGET="rules:#pages#transSaveSuccess.xhtml" TITLE="saveTransformer" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#transformer.xhtml:1" NAME="item1"
+   PATH="/pages/transformer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="transformerMonthDetails::#pages#transformer.xhtml" NAME="output"
+    PATH="/pages/transformer.xhtml"
+    TARGET="rules:#pages#transformer.xhtml"
+    TITLE="transformerMonthDetails" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#transformer.xhtml:2" NAME="item2"
+   PATH="/pages/transformer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancelTransData::#pages#home.xhtml"
+    NAME="output" PATH="/pages/home.xhtml"
+    TARGET="rules:#pages#home.xhtml" TITLE="cancelTransData" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#transformer.xhtml:3" NAME="item3"
+   PATH="/pages/transformer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="valdateTransformer::#pages#transformer.xhtml" NAME="output"
+    PATH="/pages/transformer.xhtml"
+    TARGET="rules:#pages#transformer.xhtml" TITLE="valdateTransformer" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#transSaveSuccess.xhtml"
+  PATH="/pages/transSaveSuccess.xhtml" SHAPE="240,4657,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#transSaveSuccess.xhtml:0" NAME="item"
+   PATH="/pages/transSaveSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancelTrans::#pages#home.xhtml"
+    NAME="output" PATH="/pages/home.xhtml"
+    TARGET="rules:#pages#home.xhtml" TITLE="cancelTrans" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:6" PATH="*" SHAPE="96,1121,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:6" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="workAwardHome::#pages#workAward.xhtml"
+    NAME="output" PATH="/pages/workAward.xhtml"
+    TARGET="rules:#pages#workAward.xhtml" TITLE="workAwardHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#mnr.xhtml" PATH="/pages/mnr.xhtml"
+  SHAPE="368,1137,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#mnr.xhtml:0" NAME="item"
+   PATH="/pages/mnr.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="mnrSavedSuces::#pages#mnrSaveSuccess.xhtml"
+    NAME="output" PATH="/pages/mnrSaveSuccess.xhtml"
+    TARGET="rules:#pages#mnrSaveSuccess.xhtml" TITLE="mnrSavedSuces" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="mnrFailed2Save::#pages#mnr.xhtml"
+    NAME="output1" PATH="/pages/mnr.xhtml"
+    TARGET="rules:#pages#mnr.xhtml" TITLE="mnrFailed2Save" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#mnr.xhtml:1" NAME="item1"
+   PATH="/pages/mnr.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#mnrSaveSuccess.xhtml"
+  PATH="/pages/mnrSaveSuccess.xhtml" SHAPE="608,1121,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#mnrSaveSuccess.xhtml:0" NAME="item"
+   PATH="/pages/mnrSaveSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:7" PATH="*" SHAPE="96,4881,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:7" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="workStatusHome::#pages#workStatus.xhtml"
+    NAME="output" PATH="/pages/workStatus.xhtml"
+    TARGET="rules:#pages#workStatus.xhtml" TITLE="workStatusHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:8" PATH="*" SHAPE="96,4945,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:8" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="transPage::#pages#transformer.xhtml"
+    NAME="output" PATH="/pages/transformer.xhtml"
+    TARGET="rules:#pages#transformer.xhtml" TITLE="transPage" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#doorLock.xhtml"
+  PATH="/pages/doorLock.xhtml" SHAPE="240,5857,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#doorLock.xhtml:0" NAME="item"
+   PATH="/pages/doorLock.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="saveDoorLockDetilas::#pages#doorLockSaveSuccess.xhtml"
+    NAME="output" PATH="/pages/doorLockSaveSuccess.xhtml"
+    TARGET="rules:#pages#doorLockSaveSuccess.xhtml"
+    TITLE="saveDoorLockDetilas" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="failureDoorLockDetilas::#pages#doorLock.xhtml" NAME="output1"
+    PATH="/pages/doorLock.xhtml" TARGET="rules:#pages#doorLock.xhtml"
+    TITLE="failureDoorLockDetilas" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#doorLock.xhtml:1" NAME="item1"
+   PATH="/pages/doorLock.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#doorLock.xhtml:2" NAME="item2"
+   PATH="/pages/doorLock.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="drExist::#pages#doorLock.xhtml"
+    NAME="output" PATH="/pages/doorLock.xhtml"
+    TARGET="rules:#pages#doorLock.xhtml" TITLE="drExist" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#doorLockSaveSuccess.xhtml"
+  PATH="/pages/doorLockSaveSuccess.xhtml" SHAPE="448,6705,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#doorLockSaveSuccess.xhtml:0"
+   NAME="item" PATH="/pages/doorLockSaveSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="okButton::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="okButton" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:9" PATH="*" SHAPE="32,3393,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:9" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="doorLockPage::#pages#doorLock.xhtml"
+    NAME="output" PATH="/pages/doorLock.xhtml"
+    TARGET="rules:#pages#doorLock.xhtml" TITLE="doorLockPage" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#feederInterruption.xhtml"
+  PATH="/pages/feederInterruption.xhtml" SHAPE="240,3409,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#feederInterruption.xhtml:0" NAME="item"
+   PATH="/pages/feederInterruption.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="fdiSavedSuces::#pages#fdiSaveSuccess.xhtml"
+    NAME="output" PATH="/pages/fdiSaveSuccess.xhtml"
+    TARGET="rules:#pages#fdiSaveSuccess.xhtml" TITLE="fdiSavedSuces" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="fdiFailed2Save::#pages#feederInterruption.xhtml" NAME="output1"
+    PATH="/pages/feederInterruption.xhtml"
+    TARGET="rules:#pages#feederInterruption.xhtml"
+    TITLE="fdiFailed2Save" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output2"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#fdiSaveSuccess.xhtml"
+  PATH="/pages/fdiSaveSuccess.xhtml" SHAPE="448,3393,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#fdiSaveSuccess.xhtml:0" NAME="item"
+   PATH="/pages/fdiSaveSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:10" PATH="*" SHAPE="640,1953,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:10" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="fdInterruption::#pages#feederInterruption.xhtml" NAME="output"
+    PATH="/pages/feederInterruption.xhtml"
+    TARGET="rules:#pages#feederInterruption.xhtml"
+    TITLE="fdInterruption" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:11" PATH="*" SHAPE="96,1153,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:11" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="mnrPg::#pages#mnr.xhtml" NAME="output"
+    PATH="/pages/mnr.xhtml" TARGET="rules:#pages#mnr.xhtml"
+    TITLE="mnrPg" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#disConnection.xhtml"
+  PATH="/pages/disConnection.xhtml" SHAPE="32,5489,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#disConnection.xhtml:0" NAME="item"
+   PATH="/pages/disConnection.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#pages#disconnectionSuccess.xhtml"
+    NAME="output" PATH="/pages/disconnectionSuccess.xhtml"
+    TARGET="rules:#pages#disconnectionSuccess.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="disconnectionFailure::#pages#disConnection.xhtml" NAME="output1"
+    PATH="/pages/disConnection.xhtml"
+    TARGET="rules:#pages#disConnection.xhtml"
+    TITLE="disconnectionFailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#disConnection.xhtml:1" NAME="item1"
+   PATH="/pages/disConnection.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancelHomePage::#pages#home.xhtml"
+    NAME="output" PATH="/pages/home.xhtml"
+    TARGET="rules:#pages#home.xhtml" TITLE="cancelHomePage" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#disConnection.xhtml:2" NAME="item2"
+   PATH="/pages/disConnection.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#pages#disconnectionSuccess.xhtml"
+    NAME="output" PATH="/pages/disconnectionSuccess.xhtml"
+    TARGET="rules:#pages#disconnectionSuccess.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#disconnectionSuccess.xhtml"
+  PATH="/pages/disconnectionSuccess.xhtml" SHAPE="240,6513,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#disconnectionSuccess.xhtml:0"
+   NAME="item" PATH="/pages/disconnectionSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Home::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="Home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:12" PATH="*" SHAPE="32,4417,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:12" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="zeroConPg::#pages#zeroConsumption.xhtml"
+    NAME="output" PATH="/pages/zeroConsumption.xhtml"
+    TARGET="rules:#pages#zeroConsumption.xhtml" TITLE="zeroConPg" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#bmazReports.xhtml"
+  PATH="/pages/bmazReports.xhtml" SHAPE="240,5393,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#bmazReports.xhtml:0" NAME="item"
+   PATH="/pages/bmazReports.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="mnrRep::#pages#mnrReport.xhtml"
+    NAME="output" PATH="/pages/mnrReport.xhtml"
+    TARGET="rules:#pages#mnrReport.xhtml" TITLE="mnrRep" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#transformerReport.xhtml"
+  PATH="/pages/transformerReport.xhtml" SHAPE="240,6513,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#transformerReport.xhtml:0" NAME="item"
+   PATH="/pages/transformerReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="transformerDetails::#pages#transformerReport.xhtml"
+    NAME="output" PATH="/pages/transformerReport.xhtml"
+    TARGET="rules:#pages#transformerReport.xhtml"
+    TITLE="transformerDetails" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="transformerFailure::#pages#transformerReport.xhtml"
+    NAME="output1" PATH="/pages/transformerReport.xhtml"
+    TARGET="rules:#pages#transformerReport.xhtml"
+    TITLE="transformerFailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#workOrder.xhtml"
+  PATH="/pages/workOrder.xhtml" SHAPE="304,6513,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#workOrder.xhtml:0" NAME="item"
+   PATH="/pages/workOrder.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="workOrder::#pages#workOrderEntry.xhtml"
+    NAME="output" PATH="/pages/workOrderEntry.xhtml"
+    TARGET="rules:#pages#workOrderEntry.xhtml" TITLE="workOrder" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workworkOrderHome::#pages#workOrder.xhtml"
+    NAME="output1" PATH="/pages/workOrder.xhtml"
+    TARGET="rules:#pages#workOrder.xhtml" TITLE="workworkOrderHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#workOrderEntry.xhtml"
+  PATH="/pages/workOrderEntry.xhtml" SHAPE="48,6673,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#workOrderEntry.xhtml:0" NAME="item"
+   PATH="/pages/workOrderEntry.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="workOrderUpdateSuccess::#pages#workOrderSavedSuccess.xhtml"
+    NAME="output" PATH="/pages/workOrderSavedSuccess.xhtml"
+    TARGET="rules:#pages#workOrderSavedSuccess.xhtml"
+    TITLE="workOrderUpdateSuccess" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workOrder::#pages#workOrderEntry.xhtml"
+    NAME="output1" PATH="/pages/workOrderEntry.xhtml"
+    TARGET="rules:#pages#workOrderEntry.xhtml" TITLE="workOrder" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="workOrderUpdateFailure::#pages#workOrderSavedfailure.xhtml"
+    NAME="output2" PATH="/pages/workOrderSavedfailure.xhtml"
+    TARGET="rules:#pages#workOrderSavedfailure.xhtml"
+    TITLE="workOrderUpdateFailure" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workOrderHome::#pages#workOrder.xhtml"
+    NAME="output3" PATH="/pages/workOrder.xhtml"
+    TARGET="rules:#pages#workOrder.xhtml" TITLE="workOrderHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:13" PATH="*" SHAPE="48,6881,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:13" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="revenueEntryPg::#pages#revenueEntry.xhtml"
+    NAME="output" PATH="/pages/revenueEntry.xhtml"
+    TARGET="rules:#pages#revenueEntry.xhtml" TITLE="revenueEntryPg" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#workOrderSavedSuccess.xhtml"
+  PATH="/pages/workOrderSavedSuccess.xhtml" SHAPE="304,6689,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#workOrderSavedfailure.xhtml"
+  PATH="/pages/workOrderSavedfailure.xhtml" SHAPE="304,6897,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#TariffDCA.xhtml"
+  PATH="/pages/TariffDCA.xhtml" SHAPE="32,8209,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#TariffDCA.xhtml:0" NAME="item"
+   PATH="/pages/TariffDCA.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="saveFailed::#pages#TariffDCA.xhtml"
+    NAME="output" PATH="/pages/TariffDCA.xhtml"
+    TARGET="rules:#pages#TariffDCA.xhtml" TITLE="saveFailed" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#TariffDCA.xhtml:1" NAME="item1"
+   PATH="/pages/TariffDCA.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#pages#transSaveSuccess.xhtml"
+    NAME="output" PATH="/pages/transSaveSuccess.xhtml"
+    TARGET="rules:#pages#transSaveSuccess.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#TariffDCA.xhtml:2" NAME="item2"
+   PATH="/pages/TariffDCA.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="saveTariff::#pages#tarifSaveSuccess.xhtml"
+    NAME="output" PATH="/pages/tarifSaveSuccess.xhtml"
+    TARGET="rules:#pages#tarifSaveSuccess.xhtml" TITLE="saveTariff" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="failTariff::#pages#TariffDCA.xhtml"
+    NAME="output1" PATH="/pages/TariffDCA.xhtml"
+    TARGET="rules:#pages#TariffDCA.xhtml" TITLE="failTariff" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#TariffDCA.xhtml:3" NAME="item3"
+   PATH="/pages/TariffDCA.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="getTariffDetails::#pages#TariffDCA.xhtml"
+    NAME="output" PATH="/pages/TariffDCA.xhtml"
+    TARGET="rules:#pages#TariffDCA.xhtml" TITLE="getTariffDetails" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#tarifView.xhtml"
+  PATH="/pages/tarifView.xhtml" SHAPE="96,5601,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#tarifSaveSuccess.xhtml"
+  PATH="/pages/tarifSaveSuccess.xhtml" SHAPE="96,6785,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#tarifSaveSuccess.xhtml:0" NAME="item"
+   PATH="/pages/tarifSaveSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#pages#tarifView.xhtml"
+    NAME="output" PATH="/pages/tarifView.xhtml"
+    TARGET="rules:#pages#tarifView.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#tarifSaveSuccess.xhtml:1" NAME="item1"
+   PATH="/pages/tarifSaveSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancelTariff::#pages#home.xhtml"
+    NAME="output" PATH="/pages/home.xhtml"
+    TARGET="rules:#pages#home.xhtml" TITLE="cancelTariff" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#mnrReport.xhtml"
+  PATH="/pages/mnrReport.xhtml" SHAPE="448,6385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#mnrReport.xhtml:0" NAME="item"
+   PATH="/pages/mnrReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="mnrRepFailure::#pages#mnrReport.xhtml"
+    NAME="output" PATH="/pages/mnrReport.xhtml"
+    TARGET="rules:#pages#mnrReport.xhtml" TITLE="mnrRepFailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#mnrReport.xhtml:1" NAME="item1"
+   PATH="/pages/mnrReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="mnrReport::#pages#mnrReport.xhtml"
+    NAME="output" PATH="/pages/mnrReport.xhtml"
+    TARGET="rules:#pages#mnrReport.xhtml" TITLE="mnrReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#doorLockReport.xhtml"
+  PATH="/pages/doorLockReport.xhtml" SHAPE="448,8065,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#doorLockReport.xhtml:0" NAME="item"
+   PATH="/pages/doorLockReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="doorLockSumryReport::#pages#doorLockReport.xhtml" NAME="output"
+    PATH="/pages/doorLockReport.xhtml"
+    TARGET="rules:#pages#doorLockReport.xhtml"
+    TITLE="doorLockSumryReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#feederInterruptionReports.xhtml"
+  PATH="/pages/feederInterruptionReports.xhtml" SHAPE="448,8065,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#feederInterruptionReports.xhtml:0"
+   NAME="item" PATH="/pages/feederInterruptionReports.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="success::#pages#feederInterruptionReports.xhtml" NAME="output"
+    PATH="/pages/feederInterruptionReports.xhtml"
+    TARGET="rules:#pages#feederInterruptionReports.xhtml"
+    TITLE="success" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="fdrReportFailure::#pages#feederInterruptionReports.xhtml"
+    NAME="output1" PATH="/pages/feederInterruptionReports.xhtml"
+    TARGET="rules:#pages#feederInterruptionReports.xhtml"
+    TITLE="fdrReportFailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#disconnectionRep.xhtml"
+  PATH="/pages/disconnectionRep.xhtml" SHAPE="448,8065,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#disconnectionRep.xhtml:0" NAME="item"
+   PATH="/pages/disconnectionRep.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="disconnectionReport::#pages#disconnectionRep.xhtml"
+    NAME="output" PATH="/pages/disconnectionRep.xhtml"
+    TARGET="rules:#pages#disconnectionRep.xhtml"
+    TITLE="disconnectionReport" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="disconnectionReportFailure::#pages#disconnectionRep.xhtml"
+    NAME="output1" PATH="/pages/disconnectionRep.xhtml"
+    TARGET="rules:#pages#disconnectionRep.xhtml"
+    TITLE="disconnectionReportFailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#tarifReport.xhtml"
+  PATH="/pages/tarifReport.xhtml" SHAPE="448,8065,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#tarifReport.xhtml:0" NAME="item"
+   PATH="/pages/tarifReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="traiffDetails::#pages#tarifReport.xhtml"
+    NAME="output" PATH="/pages/tarifReport.xhtml"
+    TARGET="rules:#pages#tarifReport.xhtml" TITLE="traiffDetails" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="traiffDetailsFailure::#pages#tarifReport.xhtml" NAME="output1"
+    PATH="/pages/tarifReport.xhtml"
+    TARGET="rules:#pages#tarifReport.xhtml" TITLE="traiffDetailsFailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#zeroConReport.xhtml"
+  PATH="/pages/zeroConReport.xhtml" SHAPE="464,6385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#zeroConReport.xhtml:0" NAME="item"
+   PATH="/pages/zeroConReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="zeroConRep::#pages#zeroConReport.xhtml"
+    NAME="output" PATH="/pages/zeroConReport.xhtml"
+    TARGET="rules:#pages#zeroConReport.xhtml" TITLE="zeroConRep" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:14" PATH="*" SHAPE="96,1185,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:14" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="tariffDcaPage::#pages#TariffDCA.xhtml"
+    NAME="output" PATH="/pages/TariffDCA.xhtml"
+    TARGET="rules:#pages#TariffDCA.xhtml" TITLE="tariffDcaPage" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:*:15" PATH="*" SHAPE="96,1185,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:*:15" NAME="item" PATH="*" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="reportPage::#pages#bmazReports.xhtml"
+    NAME="output" PATH="/pages/bmazReports.xhtml"
+    TARGET="rules:#pages#bmazReports.xhtml" TITLE="reportPage" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#instalation.xhtml"
+  PATH="/pages/instalation.xhtml" SHAPE="96,1185,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#instalation.xhtml:0" NAME="item"
+   PATH="/pages/instalation.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="success::#pages#instalationSuccess.xhtml"
+    NAME="output" PATH="/pages/instalationSuccess.xhtml"
+    TARGET="rules:#pages#instalationSuccess.xhtml" TITLE="success" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="failureInstall::#pages#instalation.xhtml"
+    NAME="output1" PATH="/pages/instalation.xhtml"
+    TARGET="rules:#pages#instalation.xhtml" TITLE="failureInstall" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#instalation.xhtml:1" NAME="item1"
+   PATH="/pages/instalation.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancelHomePage::#pages#home.xhtml"
+    NAME="output" PATH="/pages/home.xhtml"
+    TARGET="rules:#pages#home.xhtml" TITLE="cancelHomePage" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#instalationSuccess.xhtml"
+  PATH="/pages/instalationSuccess.xhtml" SHAPE="368,1201,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#instalationSuccess.xhtml:0" NAME="item"
+   PATH="/pages/instalationSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Home::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="Home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#instalationRep.xhtml"
+  PATH="/pages/instalationRep.xhtml" SHAPE="32,8465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#instalationRep.xhtml:0" NAME="item"
+   PATH="/pages/instalationRep.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="instalationRep::#pages#instalationRep.xhtml"
+    NAME="output" PATH="/pages/instalationRep.xhtml"
+    TARGET="rules:#pages#instalationRep.xhtml" TITLE="instalationRep" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#workAward.xhtml"
+  PATH="/pages/workAward.xhtml" SHAPE="304,8481,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#workAward.xhtml:0" NAME="item"
+   PATH="/pages/workAward.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="workAward::#pages#workAwardEntry.xhtml"
+    NAME="output" PATH="/pages/workAwardEntry.xhtml"
+    TARGET="rules:#pages#workAwardEntry.xhtml" TITLE="workAward" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workworkAwardHome::#pages#workAward.xhtml"
+    NAME="output1" PATH="/pages/workAward.xhtml"
+    TARGET="rules:#pages#workAward.xhtml" TITLE="workworkAwardHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#workAwardEntry.xhtml"
+  PATH="/pages/workAwardEntry.xhtml" SHAPE="48,8465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#workAwardEntry.xhtml:0" NAME="item"
+   PATH="/pages/workAwardEntry.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="workAwardUpdateSuccess::#pages#workAwardSavedSuccess.xhtml"
+    NAME="output" PATH="/pages/workAwardSavedSuccess.xhtml"
+    TARGET="rules:#pages#workAwardSavedSuccess.xhtml"
+    TITLE="workAwardUpdateSuccess" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workAward::#pages#workAwardEntry.xhtml"
+    NAME="output1" PATH="/pages/workAwardEntry.xhtml"
+    TARGET="rules:#pages#workAwardEntry.xhtml" TITLE="workAward" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="workAwardUpdateFailure::#pages#workAwardSavedfailure.xhtml"
+    NAME="output2" PATH="/pages/workAwardSavedfailure.xhtml"
+    TARGET="rules:#pages#workAwardSavedfailure.xhtml"
+    TITLE="workAwardUpdateFailure" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="workAwardHome::#pages#workAward.xhtml"
+    NAME="output3" PATH="/pages/workAward.xhtml"
+    TARGET="rules:#pages#workAward.xhtml" TITLE="workAwardHome" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#workAwardSavedSuccess.xhtml"
+  PATH="/pages/workAwardSavedSuccess.xhtml" SHAPE="304,8689,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#workAwardSavedfailure.xhtml"
+  PATH="/pages/workAwardSavedfailure.xhtml" SHAPE="304,8801,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#tarifDCASumryReport.xhtml"
+  PATH="/pages/tarifDCASumryReport.xhtml" SHAPE="32,10625,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#tarifDCASumryReport.xhtml:0"
+   NAME="item" PATH="/pages/tarifDCASumryReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="tarifDCASumryReport::#pages#tarifDCASumryReport.xhtml"
+    NAME="output" PATH="/pages/tarifDCASumryReport.xhtml"
+    TARGET="rules:#pages#tarifDCASumryReport.xhtml"
+    TITLE="tarifDCASumryReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#transformerSummaryReport.xhtml"
+  PATH="/pages/transformerSummaryReport.xhtml" SHAPE="32,10625,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#transformerSummaryReport.xhtml:0"
+   NAME="item" PATH="/pages/transformerSummaryReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="transformerSummary::#pages#transformerSummaryReport.xhtml"
+    NAME="output" PATH="/pages/transformerSummaryReport.xhtml"
+    TARGET="rules:#pages#transformerSummaryReport.xhtml"
+    TITLE="transformerSummary" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#summaryDisconnectionReports.xhtml"
+  PATH="/pages/summaryDisconnectionReports.xhtml" SHAPE="48,10689,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#summaryDisconnectionReports.xhtml:0"
+   NAME="item" PATH="/pages/summaryDisconnectionReports.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="summaryDisconnectionReports::#pages#summaryDisconnectionReports.xhtml"
+    NAME="output" PATH="/pages/summaryDisconnectionReports.xhtml"
+    TARGET="rules:#pages#summaryDisconnectionReports.xhtml"
+    TITLE="summaryDisconnectionReports" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="summaryDisconnectionReports1::#pages#summaryDisconnectionReports.xhtml"
+    NAME="output1" PATH="/pages/summaryDisconnectionReports.xhtml"
+    TARGET="rules:#pages#summaryDisconnectionReports.xhtml"
+    TITLE="summaryDisconnectionReports1" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#summaryDisconnectionReports.xhtml:1"
+   NAME="item1" PATH="/pages/summaryDisconnectionReports.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="disconnectionReport::#pages#disconnectionRep.xhtml"
+    NAME="output" PATH="/pages/disconnectionRep.xhtml"
+    TARGET="rules:#pages#disconnectionRep.xhtml"
+    TITLE="disconnectionReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#summaryZeroConReport.xhtml"
+  PATH="/pages/summaryZeroConReport.xhtml" SHAPE="32,10689,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#summaryZeroConReport.xhtml:0"
+   NAME="item" PATH="/pages/summaryZeroConReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="sumZCSuces::#pages#summaryZeroConReport.xhtml" NAME="output"
+    PATH="/pages/summaryZeroConReport.xhtml"
+    TARGET="rules:#pages#summaryZeroConReport.xhtml" TITLE="sumZCSuces" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM
+  NAME="rules:#pages#summaryFeederInterruptionReports.xhtml"
+  PATH="/pages/summaryFeederInterruptionReports.xhtml"
+  SHAPE="240,10705,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM
+   ID="rules:#pages#summaryFeederInterruptionReports.xhtml:0"
+   NAME="item" PATH="/pages/summaryFeederInterruptionReports.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="sumFedInterRep::#pages#summaryFeederInterruptionReports.xhtml"
+    NAME="output" PATH="/pages/summaryFeederInterruptionReports.xhtml"
+    TARGET="rules:#pages#summaryFeederInterruptionReports.xhtml"
+    TITLE="sumFedInterRep" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#instalationSumryRep.xhtml"
+  PATH="/pages/instalationSumryRep.xhtml" SHAPE="32,12657,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#instalationSumryRep.xhtml:0"
+   NAME="item" PATH="/pages/instalationSumryRep.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="instalationSumryRep::#pages#instalationSumryRep.xhtml"
+    NAME="output" PATH="/pages/instalationSumryRep.xhtml"
+    TARGET="rules:#pages#instalationSumryRep.xhtml"
+    TITLE="instalationSumryRep" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#zeroConsumption.xhtml"
+  PATH="/pages/zeroConsumption.xhtml" SHAPE="96,1185,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#zeroConsumption.xhtml:0" NAME="item"
+   PATH="/pages/zeroConsumption.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="zeroConSuces::#pages#zeroConsumption.xhtml"
+    NAME="output" PATH="/pages/zeroConsumption.xhtml"
+    TARGET="rules:#pages#zeroConsumption.xhtml" TITLE="zeroConSuces" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#pages#zeroConsumption.xhtml:1" NAME="item1"
+   PATH="/pages/zeroConsumption.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="zeroConSavedSuces::#pages#zeroConSaveSuces.xhtml" NAME="output"
+    PATH="/pages/zeroConSaveSuces.xhtml"
+    TARGET="rules:#pages#zeroConSaveSuces.xhtml"
+    TITLE="zeroConSavedSuces" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="zeroConSavedFail::#pages#zeroConsumption.xhtml" NAME="output1"
+    PATH="/pages/zeroConsumption.xhtml"
+    TARGET="rules:#pages#zeroConsumption.xhtml" TITLE="zeroConSavedFail" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output2"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#zeroConSaveSuces.xhtml"
+  PATH="/pages/zeroConSaveSuces.xhtml" SHAPE="368,1201,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#zeroConSaveSuces.xhtml:0" NAME="item"
+   PATH="/pages/zeroConSaveSuces.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#revenueEntry.xhtml"
+  PATH="/pages/revenueEntry.xhtml" SHAPE="576,1136,50,73" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#revenueEntry.xhtml:0" NAME="item"
+   PATH="/pages/revenueEntry.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="revenueSaveSuccess::#pages#revenueSaveSuccess.xhtml"
+    NAME="output" PATH="/pages/revenueSaveSuccess.xhtml"
+    TARGET="rules:#pages#revenueSaveSuccess.xhtml"
+    TITLE="revenueSaveSuccess" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="revenueEntryPg::#pages#revenueEntry.xhtml"
+    NAME="output1" PATH="/pages/revenueEntry.xhtml"
+    TARGET="rules:#pages#revenueEntry.xhtml" TITLE="revenueEntryPg" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output2"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#revenueSaveSuccess.xhtml"
+  PATH="/pages/revenueSaveSuccess.xhtml" SHAPE="368,1201,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#revenueSaveSuccess.xhtml:0" NAME="item"
+   PATH="/pages/revenueSaveSuccess.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#home.xhtml" NAME="output"
+    PATH="/pages/home.xhtml" TARGET="rules:#pages#home.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#revenueReport.xhtml"
+  PATH="/pages/revenueReport.xhtml" SHAPE="48,11969,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#revenueReport.xhtml:0" NAME="item"
+   PATH="/pages/revenueReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="revenueReport::#pages#revenueReport.xhtml"
+    NAME="output" PATH="/pages/revenueReport.xhtml"
+    TARGET="rules:#pages#revenueReport.xhtml" TITLE="revenueReport" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="revenueFailureReport::#pages#revenueReport.xhtml" NAME="output1"
+    PATH="/pages/revenueReport.xhtml"
+    TARGET="rules:#pages#revenueReport.xhtml"
+    TITLE="revenueFailureReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#revenueReportSummary.xhtml"
+  PATH="/pages/revenueReportSummary.xhtml" SHAPE="32,11969,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#revenueReportSummary.xhtml:0"
+   NAME="item" PATH="/pages/revenueReportSummary.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="revenueReportSummary::#pages#revenueReportSummary" NAME="output"
+    PATH="/pages/revenueReportSummary"
+    TARGET="rules:#pages#revenueReportSummary"
+    TITLE="revenueReportSummary" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#revenueReportSummary"
+  PATH="/pages/revenueReportSummary" SHAPE="240,11985,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#login.xhtml" PATH="/pages/login.xhtml"
+  SHAPE="368,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#login.xhtml:0" NAME="item"
+   PATH="/pages/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="loginSuccess::#pages#home.xhtml"
+    NAME="output" PATH="/pages/home.xhtml"
+    TARGET="rules:#pages#home.xhtml" TITLE="loginSuccess" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="loginfailure::#pages#login.xhtml"
+    NAME="output2" PATH="/pages/login.xhtml"
+    TARGET="rules:#pages#login.xhtml" TITLE="loginfailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#doorLockDetailReport.xhtml"
+  PATH="/pages/doorLockDetailReport.xhtml" SHAPE="32,13841,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#doorLockDetailReport.xhtml:0"
+   NAME="item" PATH="/pages/doorLockDetailReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="doorLockDetailReport::#pages#doorLockDetailReport.xhtml"
+    NAME="output" PATH="/pages/doorLockDetailReport.xhtml"
+    TARGET="rules:#pages#doorLockDetailReport.xhtml"
+    TITLE="doorLockDetailReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#ageingServiceReport.xhtml"
+  PATH="/pages/ageingServiceReport.xhtml" SHAPE="32,13841,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#ageingServiceReport.xhtml:0"
+   NAME="item" PATH="/pages/ageingServiceReport.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="ageingServiceReport::#pages#ageingServiceReport.xhtml"
+    NAME="output" PATH="/pages/ageingServiceReport.xhtml"
+    TARGET="rules:#pages#ageingServiceReport.xhtml"
+    TITLE="ageingServiceReport" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#registrationAddNew.xhtml"
+  PATH="/pages/registrationAddNew.xhtml" SHAPE="336,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#pages#registrationAddNew.xhtml:0" NAME="item"
+   PATH="/pages/registrationAddNew.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="addSuccess::#pages#prgSaveSuces.xhtml"
+    NAME="output" PATH="/pages/prgSaveSuces.xhtml"
+    TARGET="rules:#pages#prgSaveSuces.xhtml" TITLE="addSuccess" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cancel::#pages#program.xhtml" NAME="output1"
+    PATH="/pages/program.xhtml" TARGET="rules:#pages#program.xhtml"
+    TITLE="cancel" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addFailure::#pages#registrationAddNew.xhtml"
+    NAME="output2" PATH="/pages/registrationAddNew.xhtml"
+    TARGET="rules:#pages#registrationAddNew.xhtml" TITLE="addFailure" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

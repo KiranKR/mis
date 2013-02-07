@@ -1,0 +1,140 @@
+<html>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:p="http://primefaces.org/ui" template="/pages/BaseTemplate.xhtml">
+
+
+
+
+
+	<ui:define name="body" onload="noBack();"
+		onpageshow="if (event.persisted) noBack();">
+
+		<script type="text/javascript">
+setTimeout(function focusIt()
+{
+  var mytext = document.getElementById("Successform:taluk"); 
+  mytext.focus(); 
+  mytext.select();
+}
+, 1);
+
+window.history.forward();
+function noBack() { window.history.forward();}
+</script>
+
+		<h:form id="Successform">
+			<div class="title_wrapper">
+				<h2>Registration Add Page</h2>
+				<span class="title_wrapper_left"></span> <span
+					class="title_wrapper_right"></span>
+			</div>
+			<div class="error">
+				<div class="error_inner">
+					<span><p:messages />
+					</span>
+				</div>
+			</div>
+			<div id="product_list">
+				<!--[if !IE]>start table_wrapper<![endif]-->
+				<div class="table_wrapper">
+					<div class="table_wrapper_inner">
+						<table width="100%">
+							<tr align="center">
+								<td class="box text" colspan="4"></td>
+							</tr>
+
+							<tr>
+								<td class="box text">Ganga Kalyana Project Taluk <span class="star">*</span></td>
+								<td class="box text"><p:selectOneMenu id="taluk"
+										value="#{pc_Program.pendingRep.talukId}" tabindex="1"
+										style="height: 25px;position: top">
+										<f:selectItems value="#{pc_Program.talkLst}" />
+									</p:selectOneMenu></td>
+								<td class="box text">Section <span class="star">*</span></td>
+								<td class="box text"><p:selectOneMenu id="secId"
+										value="#{pc_Program.pendingRep.sectionId}" tabindex="2"
+										style="height: 25px;position: top">
+										<f:selectItems value="#{pc_Program.secLst}" />
+									</p:selectOneMenu></td>
+							</tr>
+
+
+
+							<tr>
+								<td class="box text">Scheme <span class="star">*</span></td>
+								<td class="box text"><p:selectOneMenu
+										value="#{pc_Program.pendingRep.schemeId}" tabindex="3"
+										style="height: 25px;position: top">
+										<f:selectItems value="#{pc_Program.schemLst}" />
+									</p:selectOneMenu>
+								</td>
+
+								<td class="box text">Sub-Scheme <span class="star">*</span></td>
+								<td class="box text"><p:selectOneMenu
+										value="#{pc_Program.pendingRep.subSchemeId}" tabindex="4"
+										style="height: 25px;position: top">
+										<f:selectItem itemLabel="----None----" itemValue="0" />
+										<f:selectItem itemLabel="Individual" itemValue="1" />
+										<f:selectItem itemLabel="Group" itemValue="2" />
+									</p:selectOneMenu></td>
+							</tr>
+
+							<tr>
+								<td class="box text">Beneficiary name <span class="star">*</span></td>
+								<td class="box text"><p:inputText
+										value="#{pc_Program.pendingRep.beneficiaryName}" tabindex="5" />
+
+								</td>
+								<td class="box text">Date of registration(DD/MM/YYYY) <span class="star">*</span></td>
+								<td class="box text"><p:inputMask
+										value="#{pc_Program.pendingRep.dtOfRegtn}" mask="99/99/9999"
+										tabindex="6" style="width:135px" /></td>
+							</tr>
+
+							<tr>
+								<td class="box text">Village <span class="star">*</span></td>
+								<td class="box text" colspan="3"><p:inputText
+										value="#{pc_Program.pendingRep.village}" tabindex="7" />
+								</td>
+								
+							</tr>
+							<tr>
+								<td class="box text">Registration Fee <span class="star">*</span>
+								
+								</td>
+								<td>
+									<p:inputText value="#{pc_Program.pendingRep.regstrFee}" tabindex="8"  styleClass="right_input" style="width:150px" >
+										<f:convertNumber  pattern="##,####,##0.00"/>
+									</p:inputText>
+								</td>
+								<td class="box text"> Registration Number<span class="star">*</span>
+								</td>
+								<td>
+									<p:inputText value="#{pc_Program.pendingRep.regstrNo}" tabindex="9" styleClass="right_input" style="width:135px"/>
+								</td>
+							</tr>
+							<tr>
+								<td></td>
+
+								<td align="right"><strong><h:commandButton
+											value="Save" action="#{pc_Program.addNewProgram}"
+											tabindex="10" styleClass="greenBtn" />
+								</strong></td>
+								<td><h:commandButton value="Cancel"
+										action="#{pc_Program.cancelProgram}" tabindex="11"
+										styleClass="greenBtn" /></td>
+								<td></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</html>
